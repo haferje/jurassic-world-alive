@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/js/sortable.min.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/css/sortable-theme-bootstrap.min.css" rel="stylesheet" />
+		<script src="data.js"></script>
+	</head>
+	<body>
+
+		<table id="team" class="sortable-theme-bootstrap" data-sortable>
+			<thead>
+				<tr>
+					<th data-sortable-type="numeric">#</th>
+					<th data-sortable="false">Img</th>
+					<th data-sortable-type="alpha">Name</th>
+					<th data-sortable-type="numeric">Level</th>
+					<th data-sortable-type="alpha">Rarity</th>
+					<th data-sortable-type="alpha">Tier</th>
+					<th data-sortable-type="numeric">Speed</th>
+					<th data-sortable-type="numeric">HP</th>
+					<th data-sortable-type="numeric">ATK</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+		<script>
+			var $table = null;
+
+			$(function() {
+
+				$table = $("table#team");
+
+				_(Team)
+					.filter(dino => dino.level > 0)
+					.map(dino => {
+						var d = _.find(Dinos, { name: dino.name });
+						var i = _.find(Images, { name: dino.name });
+						var t = _.find(Tiers, { name: dino.name });
+						return _.extend(dino, d, i, t);
+					})
+					.each((d, idx) => {
+						var template = `
+							<tr>
+								<td>${idx}</td>
+								<td><img src="${d.img}" height="50" /></td>
+								<td>${d.name}</td>
+								<td>${d.level}</td>
+								<td>${d.rarity}</td>
+								<td>${d.tier || ''}</td>
+								<td>${d.speed}</td>
+								<td>${d.levels[d.level].hp}</td>
+								<td>${d.levels[d.level].atk}</td>
+							</tr>
+						`;
+						$table.find("tbody").append(template);
+					});
+
+				Sortable.init();
+				// Sortable.initTable($table.get(0));
+
+			});
+		</script>
+
+	</body>
+</html>

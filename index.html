@@ -7,6 +7,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/js/sortable.min.js"></script>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/css/sortable-theme-bootstrap.min.css" rel="stylesheet" />
 		<script src="data.js"></script>
+		<script src="data2.js"></script>
 	</head>
 	<body>
 
@@ -41,7 +42,8 @@
 						var d = _.find(Dinos, { name: dino.name });
 						var i = _.find(Images, { name: dino.name });
 						var t = _.find(Tiers, { name: dino.name });
-						return _.extend(dino, d, i, t);
+						var l = _.find(Levels, { name: dino.name });
+						return _.extend(dino, d, i, t, l);
 					})
 					.each((d, idx) => {
 						var template = `

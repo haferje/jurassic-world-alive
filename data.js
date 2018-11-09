@@ -1,3 +1,22 @@
+// https://metahub.info/jwa-dinodex/
+
+// https://docs.google.com/spreadsheets/d/14ZoguIzdducEeJBqR-S7tp1KeaAjQpW_-lrvgwO2XZw/edit#gid=0
+// https://docs.google.com/spreadsheets/d/1POeswkG1wrf4BT2rzaWLuX7F0VzeeZe7mrSdNVS6HkY/edit#gid=1345722362
+// https://docs.google.com/spreadsheets/d/1ZLm2X8rjlFm94qJW8JtlDpmirkS4SICeoh681Oe35Zg/template/preview
+// https://docs.google.com/spreadsheets/d/1MXypWwwvB6HJlxxdq8jZlfOCmv54sEs-F3icrkUS0lc/edit#gid=0
+// https://docs.google.com/spreadsheets/d/1Qve2ewd_-QXr21mjaQ76toyrhtOZpNOcyde0UyA_xJQ/edit#gid=327547420
+
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities
+// Quick-Use Abilities
+// These moves are usable every turn with no cooldown times or delayed usage. Usually, they are lesser moves and rely entirely on the creature's damage stat.
+// Charged-Use Abilities
+// These moves are not necessarily usable every turn as there are usually cooldown times or delayed usage per action, in which case the creature using the move may have to wait a given number of turns to charge up the ability again. Usually, these are harder-hitting moves or have additional effects that will negatively affect the opponent or positively affect the creature using the move.
+// Passive Abilities
+// These abilities are not manually usable at all and instead act automatically in battle whenever required. While it may seem like some of these passive abilities unfairly take the place of an actual usable ability, these abilities may actually be more helpful than usable moves in many scenarios.
+// Swap-in Abilities
+// Some creatures now have access to Swap-In Abilities (or SIA for short). When you perform a SIA, you get the benefit of having swapped out your previous creature, having swapped in your new creature and performing an ability, all in a single action!
+
+// https://metahub.info/jurassic-world-alive/550/jwa-recipes-for-all-hybrids-what-dna-do-you-need/
 
 var Moves = [
 	{ name: "Adrenaline Surge",			damage: 0, cooldown: 3, effect: "Act first. Cleanse. Increase damage 25% for 4 turns. Regenerate 25%." },
@@ -389,58 +408,58 @@ var Levels = [
 	},
 ];
 
-var Team = [
-	{ name: "Allosaurus", 				level: 3 },
-	{ name: "Amargasaurus", 			level: 7 },
-	{ name: "Ankylosaurus", 			level: 0 },
-	{ name: "Ankylosaurus Gen 2", 		level: 4 },
-	{ name: "Apatosaurus", 				level: 0 },
-	{ name: "Dilophosaurus", 			level: 0 },
-	{ name: "Dilophosaurus Gen 2", 		level: 2 },
-	{ name: "Dimetrodon", 				level: 0 },
-	{ name: "Edmontosaurus", 			level: 6 },
-	{ name: "Einiasuchus", 				level: 0 },
-	{ name: "Einiosaurus", 				level: 0 },
-	{ name: "Euoplocephalus", 			level: 4 },
-	{ name: "Gorgosaurus", 				level: 0 },
-	{ name: "Iguanodon", 				level: 4 },
-	{ name: "Kaprosuchus", 				level: 0 },
-	{ name: "Kentrosaurus", 			level: 0 },
-	{ name: "Lythronax", 				level: 5 },
-	{ name: "Majungasaurus", 			level: 1 },
-	{ name: "Megalosaurus", 			level: 0 },
-	{ name: "Monolophosaurus Gen 2", 	level: 5 },
-	{ name: "Nodosaurus", 				level: 0 },
-	{ name: "Nundasuchus", 				level: 0 },
-	{ name: "Ophiacodon", 				level: 4 },
-	{ name: "Parasaurolophus", 			level: 3 },
-	{ name: "Postosuchus", 				level: 6 },
-	{ name: "Proceratosaurus", 			level: 0 },
-	{ name: "Pyroraptor", 				level: 0 },
-	{ name: "Rajasaurus", 				level: 0 },
-	{ name: "Sinoceratops", 			level: 0 },
-	{ name: "Spinosaurus", 				level: 0 },
-	{ name: "Stegosaurus", 				level: 5 },
-	{ name: "Suchomimus", 				level: 2 },
-	{ name: "Tanycolagreus", 			level: 0 },
-	{ name: "Tarbosaurus", 				level: 1 },
-	{ name: "Tenontosaurus", 			level: 0 },
-	{ name: "Triceratops", 				level: 6 },
-	{ name: "Triceratops Gen 2", 		level: 2 },
-	{ name: "Tuojiangosaurus", 			level: 0 },
-	{ name: "Tyrannosaurus Rex", 		level: 0 },
-	{ name: "Tyrannosaurus Gen 2", 		level: 0 },
-	{ name: "Utahraptor", 				level: 6 },
-	{ name: "Velociraptor", 			level: 3 },
-	{ name: "Wuerhosaurus", 			level: 0 },
-	// mine
-	{ name: "Dracorex Gen 2",			level: 3 },
-	{ name: "Purussaurus Gen 2",		level: 5 },
-	{ name: "Hatzegopteryx",			level: 4 },
-	{ name: "Deinocheirus",				level: 3 },
-	{ name: "Dimetrodon Gen 2", 		level: 3 },
-	{ name: "Diplocaulus",		 		level: 2 },
-	{ name: "Sarcosuchus",		 		level: 2 },
+var Collection = [
+	{ name: "Allosaurus", 				level: 4,	team: false },
+	{ name: "Amargasaurus", 			level: 7,	team: false },
+	{ name: "Ankylocodon", 				level: 0,	team: false },
+	{ name: "Ankylosaurus", 			level: 0,	team: false },
+	{ name: "Ankylosaurus Gen 2", 		level: 5,	team: false },
+	{ name: "Apatosaurus", 				level: 0,	team: false },
+	{ name: "Deinocheirus",				level: 3,	team: false },
+	{ name: "Dilophosaurus", 			level: 0,	team: false },
+	{ name: "Dilophosaurus Gen 2", 		level: 2,	team: false },
+	{ name: "Dimetrodon", 				level: 0,	team: false },
+	{ name: "Dimetrodon Gen 2", 		level: 4,	team: false },
+	{ name: "Diplocaulus",		 		level: 4,	team: false },
+	{ name: "Dracorex Gen 2",			level: 4,	team: false },
+	{ name: "Edmontosaurus", 			level: 7,	team: false },
+	{ name: "Einiasuchus", 				level: 0,	team: false },
+	{ name: "Einiosaurus", 				level: 0,	team: false },
+	{ name: "Euoplocephalus", 			level: 4,	team: false },
+	{ name: "Gorgosaurus", 				level: 0,	team: false },
+	{ name: "Hatzegopteryx",			level: 4,	team: false },
+	{ name: "Iguanodon", 				level: 4,	team: false },
+	{ name: "Kaprosuchus", 				level: 0,	team: false },
+	{ name: "Kentrosaurus", 			level: 0,	team: false },
+	{ name: "Lythronax", 				level: 6,	team: false },
+	{ name: "Majungasaurus", 			level: 1,	team: false },
+	{ name: "Megalosaurus", 			level: 0,	team: false },
+	{ name: "Monolophosaurus Gen 2", 	level: 5,	team: false },
+	{ name: "Nodosaurus", 				level: 0,	team: false },
+	{ name: "Nundasuchus", 				level: 0,	team: false },
+	{ name: "Ophiacodon", 				level: 5,	team: false },
+	{ name: "Parasaurolophus", 			level: 5,	team: false },
+	{ name: "Postosuchus", 				level: 6,	team: false },
+	{ name: "Proceratosaurus", 			level: 0,	team: false },
+	{ name: "Purussaurus Gen 2",		level: 6,	team: false },
+	{ name: "Pyroraptor", 				level: 0,	team: false },
+	{ name: "Rajasaurus", 				level: 0,	team: false },
+	{ name: "Sarcosuchus",		 		level: 2,	team: false },
+	{ name: "Sinoceratops", 			level: 0,	team: false },
+	{ name: "Spinosaurus", 				level: 6,	team: false },
+	{ name: "Stegosaurus", 				level: 6,	team: false },
+	{ name: "Suchomimus", 				level: 3,	team: false },
+	{ name: "Tanycolagreus", 			level: 0,	team: false },
+	{ name: "Tarbosaurus", 				level: 1,	team: false },
+	{ name: "Tenontosaurus", 			level: 0,	team: false },
+	{ name: "Triceratops", 				level: 6,	team: false },
+	{ name: "Triceratops Gen 2", 		level: 2,	team: false },
+	{ name: "Tuojiangosaurus", 			level: 6,	team: false },
+	{ name: "Tyrannosaurus Rex", 		level: 0,	team: false },
+	{ name: "Tyrannosaurus Rex Gen 2", 	level: 0,	team: false },
+	{ name: "Utahraptor", 				level: 7,	team: false },
+	{ name: "Velociraptor", 			level: 4,	team: false },
+	{ name: "Wuerhosaurus", 			level: 6,	team: false },
 ];
 
 
@@ -498,6 +517,7 @@ var Images = [
 ];
 // https://github.com/Incien104/Julive/tree/master/assets/dinoCards
 // https://github.com/Incien104/Julive/tree/master/1.2.22/JW%20Alive_com.ludia.jw2/assets/Database/Assets/Data/CreaturesAttributesData
+// https://drive.google.com/drive/folders/1Uwav8lnULEih-jCIK8EaE5Nueui8Lq35
 
 // src: "Img_Allopachy.png" },
 // src: "Img_Amargado.png" },
@@ -654,4 +674,9 @@ var Tiers = [
 	{ name: "Utasinoraptor",			tier: "Alpha" },
 	{ name: "Velociraptor",				tier: "Specialist" },
 	{ name: "Wuerhosaurus",				tier: "Specialist" },
+];
+
+// depletes some DNA from sources and adds to result, but might not create result
+var Fusions = [
+	{ result: "Ankylocodon", source1: "Ophiacodon", level1: 5, source2: "Ankylosaurus Gen 2", level2: 5 },
 ];

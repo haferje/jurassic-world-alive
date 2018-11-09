@@ -21,8 +21,6 @@
 					<th data-sortable-type="alpha">Rarity</th>
 					<th data-sortable-type="alpha">Tier</th>
 					<th data-sortable-type="numeric">Speed</th>
-					<th data-sortable-type="numeric">HP</th>
-					<th data-sortable-type="numeric">ATK</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,20 +28,22 @@
 		</table>
 
 		<script>
+			// TODO:
+			// column to sort by team, then collection by level then name
+
 			var $table = null;
 
 			$(function() {
 
 				$table = $("table#team");
 
-				_(Team)
+				_(Collection)
 					.filter(dino => dino.level > 0)
 					.map(dino => {
 						var d = _.find(Dinos, { name: dino.name });
 						var i = _.find(Images, { name: dino.name });
 						var t = _.find(Tiers, { name: dino.name });
-						var l = _.find(Levels, { name: dino.name });
-						return _.extend(dino, d, i, t, l);
+						return _.extend(dino, d, i, t);
 					})
 					.each((d, idx) => {
 						var template = `
@@ -55,8 +55,6 @@
 								<td>${d.rarity}</td>
 								<td>${d.tier || ''}</td>
 								<td>${d.speed}</td>
-								<td>${d.levels[d.level].hp}</td>
-								<td>${d.levels[d.level].atk}</td>
 							</tr>
 						`;
 						$table.find("tbody").append(template);

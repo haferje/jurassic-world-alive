@@ -1,12 +1,409 @@
+
 // https://metahub.info/jwa-dinodex/
+// HOW TO: copy the table data from the above link and paste into the below string
+var Dinos = `
 
-// https://docs.google.com/spreadsheets/d/14ZoguIzdducEeJBqR-S7tp1KeaAjQpW_-lrvgwO2XZw/edit#gid=0
-// https://docs.google.com/spreadsheets/d/1POeswkG1wrf4BT2rzaWLuX7F0VzeeZe7mrSdNVS6HkY/edit#gid=1345722362
-// https://docs.google.com/spreadsheets/d/1ZLm2X8rjlFm94qJW8JtlDpmirkS4SICeoh681Oe35Zg/template/preview
-// https://docs.google.com/spreadsheets/d/1MXypWwwvB6HJlxxdq8jZlfOCmv54sEs-F3icrkUS0lc/edit#gid=0
-// https://docs.google.com/spreadsheets/d/1Qve2ewd_-QXr21mjaQ76toyrhtOZpNOcyde0UyA_xJQ/edit#gid=327547420
+Alankylosaurus
+Legendary	Apex	4200	30%	900	110	5%
 
-// http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities
+Alanqa
+Epic	Survivor	4200	0%	980	116	5%
+
+Allosaurus
+Common	Hatchling	4500	0%	1650	104	20%
+
+Allosinosaurus
+Legendary	Apex	4500	15%	1500	106	20%
+
+Amargasaurus
+Rare	Hatchling	5400	0%	1060	103	5%
+
+Amargocephalus
+Epic	Specialist	4290	40%	850	104	5%
+
+Ankylocodon
+Rare	Specialist	3900	25%	800	107	20%
+
+Ankylosaurus
+Epic	Specialist	4800	30%	900	116	5%
+
+Ankylosaurus Gen 2
+Common	Specialist	4410	25%	900	112	5%
+
+Ankyntrosaurus
+Legendary	Alpha	5100	30%	1000	115	5%
+
+Apatosaurus
+Common	Hatchling	6000	0%	870	101	5%
+
+Arambourgiania
+Rare	Survivor	4500	0%	780	112	5%
+
+Argentinosaurus
+Rare	Survivor	5100	0%	1050	102	40%
+
+Baryonyx
+Epic	Survivor	3750	0%	1240	124	20%
+
+Baryonyx Gen 2
+Rare	Hatchling	3900	0%	1000	123	20%
+
+Blue
+Epic	Alpha	3000	10%	1150	131	5%
+
+Brachiosaurus
+Epic	Alpha	5700	10%	1050	111	10%
+
+Carnotaurus
+Rare	Hatchling	4050	0%	900	104	5%
+
+Charlie
+Rare	Survivor	2100	0%	1380	129	5%
+
+Concavenator
+Epic	Specialist	3690	0%	1030	106	5%
+
+Deinocheirus
+Common	Hatchling	3000	0%	1270	130	5%
+
+Delta
+Rare	Survivor	2400	0%	1300	131	5%
+
+Dilophosaurus
+Rare	Specialist	3870	0%	1100	124	5%
+
+Dilophosaurus Gen 2
+Common	Hatchling	2700	0%	1220	121	5%
+
+Diloracheirus
+Unique	Apex	3450	0%	1330	129	5%
+
+Diloranosaurus
+Legendary	Alpha	4200	0%	1100	126	5%
+
+Dimetrodon
+Rare	Survivor	4200	0%	1000	113	5%
+
+Dimetrodon Gen 2
+Common	Specialist	4200	0%	1000	112	5%
+
+Diorajasaur
+Unique	Alpha	4200	30%	900	108	5%
+
+Diplocaulus
+Common	Hatchling	3000	0%	1100	124	5%
+
+Diplocaulus Gen 2
+Rare	Specialist	3900	0%	1130	125	5%
+
+Diplotator
+Rare	Survivor	4800	0%	1000	120	5%
+
+Dracorex
+Rare	Hatchling	2850	0%	1220	124	5%
+
+Dracorex Gen 2
+Common	Carcass	3750	0%	1100	119	5%
+
+Dsungaripterus
+Rare	Specialist	3000	0%	850	110	5%
+
+Echo
+Rare	Specialist	2700	0%	1300	128	5%
+
+Edmontosaurus
+Rare	Specialist	4920	0%	950	107	5%
+
+Einiasuchus
+Rare	Survivor	3840	20%	1300	117	5%
+
+Einiosaurus
+Common	Hatchling	4500	15%	1300	114	5%
+
+Erlidominus
+Unique	Apex	3000	0%	1400	125	20%
+
+Erlikosaurus
+Epic	Alpha	3090	0%	1400	129	5%
+
+Erlikosaurus Gen 2
+Rare	Survivor	3150	0%	1280	128	5%
+
+Euoplocephalus
+Common	Hatchling	4500	40%	950	112	5%
+
+Gallimimus
+Common	Specialist	1800	0%	1200	130	5%
+
+Gigaspikasaur
+Legendary	Survivor	4650	40%	850	107	5%
+
+Giraffatitan
+Rare	Survivor	5550	10%	900	107	20%
+
+Gorgosaurus
+Rare	Specialist	3900	0%	1550	102	20%
+
+Gorgosuchus
+Epic	Survivor	3600	0%	1360	120	20%
+
+Gryposuchus
+Epic	Specialist	4200	20%	1000	116	20%
+
+Hatzegopteryx
+Common	Hatchling	4200	0%	930	114	0%
+
+Iguanodon
+Common	Hatchling	4800	0%	850	108	5%
+
+Indominus Rex
+Legendary	Apex	4200	0%	1200	107	20%
+
+Indoraptor
+Unique	Apex	3750	0%	1400	128	20%
+
+Irritator
+Rare	Specialist	4800	0%	1030	123	5%
+
+Irritator Gen 2
+Common	Carcass	4200	0%	1000	122	20%
+
+Kaprosuchus
+Rare	Survivor	3900	0%	1000	123	5%
+
+Kentrosaurus
+Epic	Survivor	4050	0%	1210	120	5%
+
+Koolasuchus
+Epic	Survivor	4500	0%	1000	125	5%
+
+Koolasuchus Gen 2
+Rare	Specialist	4290	0%	1500	124	5%
+
+Lythronax
+Common	Hatchling	3900	0%	890	104	5%
+
+Magnapyritor
+Unique	Apex	3000	0%	1400	128	20%
+
+Majundasuchus
+Rare	Survivor	3360	0%	750	108	5%
+
+Majungasaurus
+Common	Hatchling	3660	0%	860	105	5%
+
+Megalosaurus
+Rare	Hatchling	3900	0%	860	105	5%
+
+Megalosuchus
+Legendary	Alpha	4350	0%	1000	115	5%
+
+Monolometrodon
+Legendary	Specialist	3930	0%	900	119	5%
+
+Monolophosaurus
+Epic	Specialist	3000	0%	1240	127	5%
+
+Monolophosaurus Gen 2
+Common	Hatchling	2400	0%	1200	126	5%
+
+Monomimus
+Legendary	Apex	3600	0%	1300	129	5%
+
+Monostegotops
+Legendary	Alpha	4200	30%	1300	117	20%
+
+Nodopatosaurus
+Epic	Survivor	4800	25%	830	106	5%
+
+Nodopatotitan
+Legendary	Survivor	5250	40%	950	105	5%
+
+Nodosaurus
+Rare	Specialist	4500	25%	1000	115	5%
+
+Nundasuchus
+Common	Specialist	3000	0%	1490	128	5%
+
+Ophiacodon
+Common	Hatchling	4200	0%	1000	107	40%
+
+Ornithomimus
+Rare	Survivor	2700	0%	1200	131	5%
+
+Ouranosaurus
+Epic	Alpha	4830	0%	1050	114	5%
+
+Paramoloch
+Legendary	Alpha	4800	0%	1110	121	5%
+
+Parasaurolophus
+Common	Hatchling	5100	0%	890	113	5%
+
+Postimetrodon
+Epic	Alpha	4200	0%	1000	124	5%
+
+Postosuchus
+Rare	Survivor	3600	0%	1400	126	5%
+
+Proceratosaurus
+Rare	Specialist	3000	0%	1360	125	5%
+
+Pteranodon
+Epic	Survivor	3000	0%	900	112	5%
+
+Purrusaurus
+Rare	Specialist	4200	10%	1000	112	5%
+
+Purrusaurus Gen 2
+Common	Hatchling	4200	10%	1000	111	20%
+
+Pyroraptor
+Epic	Survivor	2250	0%	1350	129	10%
+
+Pyrritator
+Legendary	Apex	3000	0%	1350	129	5%
+
+Quetzalcoatlus
+Rare	Hatchling	3900	0%	920	114	5%
+
+Rajakylosaurus
+Legendary	Apex	4800	30%	900	104	5%
+
+Rajasaurus
+Epic	Alpha	4020	0%	900	104	20%
+
+Sarcorixis
+Epic	Survivor	3840	15%	1300	117	5%
+
+Sarcosuchus
+Common	Hatchling	4200	10%	1000	110	5%
+
+Secodontosaurus
+Epic	Specialist	3300	0%	1210	114	5%
+
+Sinoceratops
+Epic	Survivor	3900	25%	1250	116	5%
+
+Spinosaurus
+Rare	Survivor	3900	0%	1000	122	5%
+
+Spinosaurus Gen 2
+Epic	Survivor	3900	0%	1110	122	5%
+
+Spinotahraptor
+Epic	Alpha	2940	0%	1330	126	5%
+
+Spinotasuchus
+Legendary	Apex	3750	0%	1270	129	20%
+
+Stegoceratops
+Epic	Alpha	4440	25%	1300	110	5%
+
+Stegodeus
+Legendary	Apex	5100	30%	1020	107	5%
+
+Stegosaurus
+Common	Hatchling	4050	15%	1150	116	5%
+
+Stygimoloch
+Epic	Survivor	3690	0%	1240	129	5%
+
+Stygimoloch Gen 2
+Common	Carcass	3810	0%	1200	128	5%
+
+Suchomimus
+Common	Specialist	3630	0%	700	115	5%
+
+Suchotator
+Rare	Alpha	4260	0%	1000	116	20%
+
+Tanycolagreus
+Common	Alpha	3210	0%	1500	130	5%
+
+Tarbosaurus
+Common	Hatchling	4050	0%	1600	104	40%
+
+Tenontosaurus
+Rare	Specialist	4800	0%	850	109	5%
+
+Tragodistis
+Legendary	Apex	3810	40%	900	124	5%
+
+Triceratops
+Rare	Specialist	4200	20%	1240	115	5%
+
+Triceratops Gen 2
+Common	Hatchling	3600	10%	1150	112	5%
+
+Trykosaurus
+Unique	Apex	4500	30%	1640	102	20%
+
+Tryostronix
+Legendary	Apex	3750	0%	1150	120	20%
+
+Tuojiangosaurus
+Rare	Specialist	4500	0%	1000	112	5%
+
+Tuoramoloch
+Unique	Alpha	4800	0%	960	126	5%
+
+Tupandactylus
+Rare	Specialist	3000	0%	820	109	5%
+
+Tyrannosaurus Rex
+Epic	Alpha	4200	0%	1700	102	30%
+
+Tyrannosaurus Rex Gen 2
+Rare	Hatchling	4200	0%	1650	104	20%
+
+Utahraptor
+Rare	Survivor	2520	0%	1350	128	5%
+
+Utarinex
+Unique	Apex	4200	0%	1330	126	5%
+
+Utasinoraptor
+Legendary	Alpha	3000	15%	1500	126	5%
+
+Velociraptor
+Common	Specialist	1950	0%	1320	132	5%
+
+Wuerhosaurus
+Rare	Specialist	4500	20%	1300	115	5%
+
+`;
+
+// replace misspelled dino names
+Dinos = Dinos.replace(/Purrusaurus/gm, "Purussaurus");
+Dinos = Dinos.replace(/Tyrannosaurus Gen 2/gm, "Tyrannosaurus Rex Gen 2");
+
+// put all dino names on same line as stats
+Dinos = Dinos.replace(
+	/^([^\t\n]+)\n/gm,
+	'$1\t'
+);
+
+// extract all stats to JSON object string
+Dinos = Dinos.replace(
+	/(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)%\t(.*?)\t(.*?)\t(.*?)%\n\n/gm,
+	'{ "name": "$1",\t\t\t\t\t\t\t"rarity": "$2", "tier": "$3", "health": $4, "armor": $5, "damage": $6, "speed": $7, "critical": $8 },\n'
+);
+
+// wrap in square brackets
+Dinos = `[${Dinos}]`;
+
+// remove ending comma
+Dinos = Dinos.replace(
+	/,(\n+\]$)/gm,
+	'$1'
+);
+
+// parse into JSON object
+Dinos = JSON.parse(Dinos);
+
+
+
 // Quick-Use Abilities
 // These moves are usable every turn with no cooldown times or delayed usage. Usually, they are lesser moves and rely entirely on the creature's damage stat.
 // Charged-Use Abilities
@@ -16,401 +413,506 @@
 // Swap-in Abilities
 // Some creatures now have access to Swap-In Abilities (or SIA for short). When you perform a SIA, you get the benefit of having swapped out your previous creature, having swapped in your new creature and performing an ability, all in a single action!
 
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities
+// HOW TO: use webscraper-sitemap.json with the Chrome extension Web Scraper to scrape each link in the table and paste the output table in the below string
+var Abilities = `
+1541702266-365	https://metahub.info/jwa-dinodex/	Diloracheirus	https://metahub.info/jwa-dinosaur/diloracheirus/		Impact and Run
+1541702258-350	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/			Counter-attack (1)
+1541702273-374	https://metahub.info/jwa-dinodex/	Delta	https://metahub.info/jwa-dinosaur/delta/		Pounce
+1541702298-411	https://metahub.info/jwa-dinodex/	Ankyntrosaurus	https://metahub.info/jwa-dinosaur/ankyntrosaurus/		Crippling Distraction
+1541702268-368	https://metahub.info/jwa-dinodex/	Dilophosaurus Gen 2	https://metahub.info/jwa-dinosaur/dilophosaurus-gen-2/		Nullifying Strike
+1541702076-30	https://metahub.info/jwa-dinodex/	Tupandactylus	https://metahub.info/jwa-dinosaur/tupandactylus/		Impact and Run
+1541702208-264	https://metahub.info/jwa-dinodex/	Indoraptor	https://metahub.info/jwa-dinosaur/indoraptor/		Evasive Stance
+1541702271-370	https://metahub.info/jwa-dinodex/	Dilophosaurus	https://metahub.info/jwa-dinosaur/dilophosaurus/		Distracting Impact
+1541702300-416	https://metahub.info/jwa-dinodex/	Ankylosaurus Gen 2	https://metahub.info/jwa-dinosaur/ankylosaurus-gen-2/		Long Protection
+1541702258-348	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/		Pinning Strike
+1541702145-151	https://metahub.info/jwa-dinodex/	Pteranodon	https://metahub.info/jwa-dinosaur/pteranodon/			Counter-attack (1)
+1541702115-102	https://metahub.info/jwa-dinodex/	Spinotahraptor	https://metahub.info/jwa-dinosaur/spinotahraptor/		Strike
+1541702304-421	https://metahub.info/jwa-dinodex/	Ankylocodon	https://metahub.info/jwa-dinosaur/ankylocodon/		Armor Piercing Impact
+1541702220-284	https://metahub.info/jwa-dinodex/	Gorgosaurus	https://metahub.info/jwa-dinosaur/gorgosaurus/		Defense Shattering Strike
+1541702065-14	https://metahub.info/jwa-dinodex/	Utasinoraptor	https://metahub.info/jwa-dinosaur/utasinoraptor/		Instant Charge
+1541702063-11	https://metahub.info/jwa-dinodex/	Velociraptor	https://metahub.info/jwa-dinosaur/velociraptor/		Strike
+1541702078-37	https://metahub.info/jwa-dinodex/	Tuoramoloch	https://metahub.info/jwa-dinosaur/tuoramoloch/		Slowing Impact
+1541702306-426	https://metahub.info/jwa-dinodex/	Amargocephalus	https://metahub.info/jwa-dinosaur/amargocephalus-2/		Decelerating Impact
+1541702306-427	https://metahub.info/jwa-dinodex/	Amargocephalus	https://metahub.info/jwa-dinosaur/amargocephalus-2/		Impact
+1541702195-243	https://metahub.info/jwa-dinodex/	Koolasuchus Gen 2	https://metahub.info/jwa-dinosaur/koolasuchus-gen-2/		Nullifying Strike
+1541702252-336	https://metahub.info/jwa-dinodex/	Diplotator	https://metahub.info/jwa-dinosaur/diplotator/		Defense Shattering Strike
+1541702281-385	https://metahub.info/jwa-dinodex/	Carnotaurus	https://metahub.info/jwa-dinosaur/carnotaurus/		Cleansing Impact
+1541702220-285	https://metahub.info/jwa-dinodex/	Gorgosaurus	https://metahub.info/jwa-dinosaur/gorgosaurus/		Ferocious Strike
+1541702172-197	https://metahub.info/jwa-dinodex/	Monostegotops	https://metahub.info/jwa-dinosaur/monostegotops/		Slowing Impact
+1541702241-318	https://metahub.info/jwa-dinodex/	Edmontosaurus	https://metahub.info/jwa-dinosaur/edmontosaurus/		Strike and Run
+1541702210-266	https://metahub.info/jwa-dinodex/	Indominus Rex	https://metahub.info/jwa-dinosaur/indominus-rex/		Armor Piercing Rampage
+1541702159-176	https://metahub.info/jwa-dinodex/	Ornithomimus	https://metahub.info/jwa-dinosaur/ornithomimus/			Immunity
+1541702107-86	https://metahub.info/jwa-dinodex/	Stegosaurus	https://metahub.info/jwa-dinosaur/stegosaurus/		Thagomizer
+1541702254-341	https://metahub.info/jwa-dinodex/	Diplocaulus Gen 2	https://metahub.info/jwa-dinosaur/diplocaulus-gen-2/		Nullifying Strike
+1541702111-93	https://metahub.info/jwa-dinodex/	Stegoceratops	https://metahub.info/jwa-dinosaur/stegoceratops/		Slowing Impact
+1541702065-15	https://metahub.info/jwa-dinodex/	Utasinoraptor	https://metahub.info/jwa-dinosaur/utasinoraptor/		Low Stunning Strike
+1541702149-156	https://metahub.info/jwa-dinodex/	Postosuchus	https://metahub.info/jwa-dinosaur/postosuchus/		Adrenaline Pulse
+1541702115-100	https://metahub.info/jwa-dinodex/	Spinotahraptor	https://metahub.info/jwa-dinosaur/spinotahraptor/		Distracting Rampage
+1541702310-435	https://metahub.info/jwa-dinodex/	Allosinosaurus	https://metahub.info/jwa-dinosaur/allosinosaurus/		Defense Shattering Impact
+1541702201-252	https://metahub.info/jwa-dinodex/	Kaprosuchus	https://metahub.info/jwa-dinosaur/kaprosuchus/		Defense Shattering Strike
+1541702101-78	https://metahub.info/jwa-dinodex/	Suchomimus	https://metahub.info/jwa-dinosaur/suchomimus/		Strike
+1541702193-239	https://metahub.info/jwa-dinodex/	Lythronax	https://metahub.info/jwa-dinosaur/lythronax/		Pinning Strike
+1541702317-447	https://metahub.info/jwa-dinodex/	Alankylosaurus	https://metahub.info/jwa-dinosaur/alankylosaurus/		Superiority Strike
+1541702141-144	https://metahub.info/jwa-dinodex/	Purrusaurus Gen 2	https://metahub.info/jwa-dinosaur/purrusaurus-gen2/		Vulnerability Strike
+1541702292-403	https://metahub.info/jwa-dinodex/	Argentinosaurus	https://metahub.info/jwa-dinosaur/argentinosaurus/		Impact
+1541702134-134	https://metahub.info/jwa-dinodex/	Quetzalcoatlus	https://metahub.info/jwa-dinosaur/quetzalcoatlus/		Superiority Strike
+1541702210-265	https://metahub.info/jwa-dinodex/	Indominus Rex	https://metahub.info/jwa-dinosaur/indominus-rex/		Armor Piercing Impact
+1541702149-157	https://metahub.info/jwa-dinodex/	Postosuchus	https://metahub.info/jwa-dinosaur/postosuchus/		Defense Shattering Strike
+1541702304-422	https://metahub.info/jwa-dinodex/	Ankylocodon	https://metahub.info/jwa-dinosaur/ankylocodon/		Armor Piercing Strike
+1541702103-80	https://metahub.info/jwa-dinodex/	Stygimoloch Gen 2	https://metahub.info/jwa-dinosaur/stygimoloch-gen-2/		Impact and Run
+1541702289-400	https://metahub.info/jwa-dinodex/	Baryonyx	https://metahub.info/jwa-dinosaur/baryonyx/		Defense Shattering Rampage
+1541702310-434	https://metahub.info/jwa-dinodex/	Allosinosaurus	https://metahub.info/jwa-dinosaur/allosinosaurus/		Armor Piercing Impact
+1541702197-246	https://metahub.info/jwa-dinodex/	Koolasuchus	https://metahub.info/jwa-dinosaur/koolasuchus/		Slowing Impact
+1541702262-357	https://metahub.info/jwa-dinodex/	Dimetrodon	https://metahub.info/jwa-dinosaur/dimetrodon/		Defense Shattering Strike
+1541702111-94	https://metahub.info/jwa-dinodex/	Stegoceratops	https://metahub.info/jwa-dinosaur/stegoceratops/		Stunning Impact
+1541702101-79	https://metahub.info/jwa-dinodex/	Suchomimus	https://metahub.info/jwa-dinosaur/suchomimus/			Swap In Wound
+1541702119-106	https://metahub.info/jwa-dinodex/	Spinosaurus	https://metahub.info/jwa-dinosaur/spinosaurus/		Exploit Wound
+1541702168-188	https://metahub.info/jwa-dinodex/	Nodopatotitan	https://metahub.info/jwa-dinosaur/nodopatotitan/		Superiority Strike
+1541702071-23	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex Gen 2	https://metahub.info/jwa-dinosaur/tyrannosaurus-gen2/		Armor Piercing Impact
+1541702151-163	https://metahub.info/jwa-dinodex/	Postimetrodon	https://metahub.info/jwa-dinosaur/postimetrodon/			Immunity
+1541702174-201	https://metahub.info/jwa-dinodex/	Monomimus	https://metahub.info/jwa-dinosaur/monomimus/		Nullifying Impact
+1541702067-17	https://metahub.info/jwa-dinodex/	Utarinex	https://metahub.info/jwa-dinosaur/utarinex/		Impact and Run
+1541702197-244	https://metahub.info/jwa-dinodex/	Koolasuchus	https://metahub.info/jwa-dinosaur/koolasuchus/		Distracting Impact
+1541702182-216	https://metahub.info/jwa-dinodex/	Megalosuchus	https://metahub.info/jwa-dinosaur/megalosuchus/		Ferocious Strike
+1541702208-261	https://metahub.info/jwa-dinodex/	Indoraptor	https://metahub.info/jwa-dinosaur/indoraptor/		Armor Piercing Strike
+1541702308-432	https://metahub.info/jwa-dinodex/	Amargasaurus	https://metahub.info/jwa-dinosaur/amargasaurus/		Pinning Strike
+1541702090-62	https://metahub.info/jwa-dinodex/	Tragodistis	https://metahub.info/jwa-dinosaur/tragodistis/		Rampage
+1541702256-344	https://metahub.info/jwa-dinodex/	Diplocaulus	https://metahub.info/jwa-dinosaur/diplocaulus/		Nullifying Strike
+1541702073-26	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex	https://metahub.info/jwa-dinosaur/tyrannosaurus-rex/		Defense Shattering Impact
+1541702136-139	https://metahub.info/jwa-dinodex/	Pyrritator	https://metahub.info/jwa-dinosaur/pyrritator/		Ready to Crush
+1541702224-294	https://metahub.info/jwa-dinodex/	Gigaspikasaur	https://metahub.info/jwa-dinosaur/gigaspikasaur/			Counter-Attack (0.5)
+1541702126-117	https://metahub.info/jwa-dinodex/	Sarcosuchus	https://metahub.info/jwa-dinosaur/sarcosuchus-2/		Vulnerability Strike
+1541702185-220	https://metahub.info/jwa-dinodex/	Megalosaurus	https://metahub.info/jwa-dinosaur/megalosaurus/		Ferocious Strike
+1541702308-433	https://metahub.info/jwa-dinodex/	Amargasaurus	https://metahub.info/jwa-dinosaur/amargasaurus/		Slowing Impact
+1541702170-194	https://metahub.info/jwa-dinodex/	Nodopatosaurus	https://metahub.info/jwa-dinosaur/nodopatasaurus/			Counter-Attack (0.5)
+1541702289-401	https://metahub.info/jwa-dinodex/	Baryonyx	https://metahub.info/jwa-dinosaur/baryonyx/		Ready to Crush
+1541702082-47	https://metahub.info/jwa-dinodex/	Tryostronix	https://metahub.info/jwa-dinosaur/tryostronix/		Ready to Crush
+1541702275-376	https://metahub.info/jwa-dinodex/	Deinocheirus	https://metahub.info/jwa-dinosaur/deinocheirus/		Minimal Speedup Strike
+1541702067-18	https://metahub.info/jwa-dinodex/	Utarinex	https://metahub.info/jwa-dinosaur/utarinex/		Instant Charge
+1541702258-351	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/			Swap In Ferocity
+1541702122-111	https://metahub.info/jwa-dinodex/	Sinoceratops	https://metahub.info/jwa-dinosaur/sinoceratops/		Stunning Impact
+1541702222-286	https://metahub.info/jwa-dinodex/	Giraffatitan	https://metahub.info/jwa-dinosaur/giraffatitan/		Bellow
+1541702124-113	https://metahub.info/jwa-dinodex/	Secodontosaurus	https://metahub.info/jwa-dinosaur/secodontosaurus/		Defense Shattering Rampage
+1541702182-217	https://metahub.info/jwa-dinodex/	Megalosuchus	https://metahub.info/jwa-dinosaur/megalosuchus/		Pinning Strike
+1541702237-311	https://metahub.info/jwa-dinodex/	Einiosaurus	https://metahub.info/jwa-dinosaur/einiosaurus-2/		Minimal Stunning Strike
+1541702279-382	https://metahub.info/jwa-dinodex/	Charlie	https://metahub.info/jwa-dinosaur/charlie/		Critical Impact
+1541702302-419	https://metahub.info/jwa-dinodex/	Ankylosaurus	https://metahub.info/jwa-dinosaur/ankylosaurus/		Long Protection
+1541702218-282	https://metahub.info/jwa-dinodex/	Gorgosuchus	https://metahub.info/jwa-dinosaur/gorgosuchus/		Ferocious Strike
+1541702208-262	https://metahub.info/jwa-dinodex/	Indoraptor	https://metahub.info/jwa-dinosaur/indoraptor/		Cleansing Impact
+1541702203-255	https://metahub.info/jwa-dinodex/	Irritator Gen 2	https://metahub.info/jwa-dinosaur/irritator-gen-2/		Defense Shattering Strike
+1541702082-48	https://metahub.info/jwa-dinodex/	Tryostronix	https://metahub.info/jwa-dinosaur/tryostronix/			Immunity
+1541702084-49	https://metahub.info/jwa-dinodex/	Trykosaurus	https://metahub.info/jwa-dinosaur/trykosaurus/		Armor Piercing Rampage
+1541702214-273	https://metahub.info/jwa-dinodex/	Hatzegopteryx	https://metahub.info/jwa-dinosaur/hatzegopteryx/		Impact and Run
+1541702113-97	https://metahub.info/jwa-dinodex/	Spinotasuchus	https://metahub.info/jwa-dinosaur/spinotasuchus/		Strike
+1541702155-167	https://metahub.info/jwa-dinodex/	Paramoloch	https://metahub.info/jwa-dinosaur/paramoloch/		Instant Charge
+1541702109-90	https://metahub.info/jwa-dinodex/	Stegodeus	https://metahub.info/jwa-dinosaur/stegodeus/		Thagomizer
+1541702182-219	https://metahub.info/jwa-dinodex/	Megalosuchus	https://metahub.info/jwa-dinosaur/megalosuchus/			Counter-attack (1)
+1541702170-193	https://metahub.info/jwa-dinodex/	Nodopatosaurus	https://metahub.info/jwa-dinosaur/nodopatasaurus/		Short Defense
+1541702252-337	https://metahub.info/jwa-dinodex/	Diplotator	https://metahub.info/jwa-dinosaur/diplotator/		Distracting Strike
+1541702249-334	https://metahub.info/jwa-dinodex/	Dracorex	https://metahub.info/jwa-dinosaur/dracorex/			Swap In Strike
+1541702082-46	https://metahub.info/jwa-dinodex/	Tryostronix	https://metahub.info/jwa-dinosaur/tryostronix/		Ferocious Strike
+1541702189-227	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/		Cleansing Impact
+1541702090-64	https://metahub.info/jwa-dinodex/	Tragodistis	https://metahub.info/jwa-dinosaur/tragodistis/			Counter-Attack (0.25)
+1541702145-150	https://metahub.info/jwa-dinodex/	Pteranodon	https://metahub.info/jwa-dinosaur/pteranodon/		Nullifying Impact
+1541702067-16	https://metahub.info/jwa-dinodex/	Utarinex	https://metahub.info/jwa-dinosaur/utarinex/		Distracting Rampage
+1541702212-272	https://metahub.info/jwa-dinodex/	Iguanodon	https://metahub.info/jwa-dinosaur/iguanodon/			Swap In Stun
+1541702090-63	https://metahub.info/jwa-dinodex/	Tragodistis	https://metahub.info/jwa-dinosaur/tragodistis/		Superiority Strike
+1541702191-237	https://metahub.info/jwa-dinodex/	Magnapyritor	https://metahub.info/jwa-dinosaur/magnapyritor/			Immunity
+1541702304-423	https://metahub.info/jwa-dinodex/	Ankylocodon	https://metahub.info/jwa-dinosaur/ankylocodon/		Decelerating Impact
+1541702105-83	https://metahub.info/jwa-dinodex/	Stygimoloch	https://metahub.info/jwa-dinosaur/stygimoloch/		Instant Charge
+1541702147-154	https://metahub.info/jwa-dinodex/	Proceratosaurus	https://metahub.info/jwa-dinosaur/proceratosaurus/		Nullifying Strike
+1541702294-406	https://metahub.info/jwa-dinodex/	Arambourgiania	https://metahub.info/jwa-dinosaur/arambourgiania/		Short Defense
+1541702138-140	https://metahub.info/jwa-dinodex/	Pyroraptor	https://metahub.info/jwa-dinosaur/pyroraptor/		Pounce
+1541702132-130	https://metahub.info/jwa-dinodex/	Rajakylosaurus	https://metahub.info/jwa-dinosaur/rajakylosaurus/		Pinning Strike
+1541702312-439	https://metahub.info/jwa-dinodex/	Allosaurus	https://metahub.info/jwa-dinosaur/allosaurus/		Defense Shattering Strike
+1541702201-254	https://metahub.info/jwa-dinodex/	Kaprosuchus	https://metahub.info/jwa-dinosaur/kaprosuchus/			Swap In Strike
+1541702096-71	https://metahub.info/jwa-dinodex/	Tanycolagreus	https://metahub.info/jwa-dinosaur/tanycolagreus/		Armor Piercing Strike
+1541702287-397	https://metahub.info/jwa-dinodex/	Baryonyx Gen 2	https://metahub.info/jwa-dinosaur/baryonyx-gen-2/		Ready to Crush
+1541702258-347	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/		Instant Invincibility
+1541702094-70	https://metahub.info/jwa-dinodex/	Tarbosaurus	https://metahub.info/jwa-dinosaur/tarbosaurus/		Defense Shattering Strike
+1541702065-13	https://metahub.info/jwa-dinodex/	Utasinoraptor	https://metahub.info/jwa-dinosaur/utasinoraptor/		Distracting Impact
+1541702224-292	https://metahub.info/jwa-dinodex/	Gigaspikasaur	https://metahub.info/jwa-dinosaur/gigaspikasaur/		Lockdown Strike
+1541702235-310	https://metahub.info/jwa-dinodex/	Erlidominus	https://metahub.info/jwa-dinosaur/erlidominus/			Immunity
+1541702239-316	https://metahub.info/jwa-dinodex/	Einiasuchus	https://metahub.info/jwa-dinosaur/einiasuchus/		Stunning Impact
+1541702170-190	https://metahub.info/jwa-dinodex/	Nodopatosaurus	https://metahub.info/jwa-dinosaur/nodopatasaurus/		Armor Piercing Impact
+1541702279-384	https://metahub.info/jwa-dinodex/	Charlie	https://metahub.info/jwa-dinosaur/charlie/		Strike
+1541702222-289	https://metahub.info/jwa-dinodex/	Giraffatitan	https://metahub.info/jwa-dinosaur/giraffatitan/			Swap In Slow
+1541702164-181	https://metahub.info/jwa-dinodex/	Nundasuchus	https://metahub.info/jwa-dinosaur/nundasuchus/		Strike
+1541702210-269	https://metahub.info/jwa-dinodex/	Indominus Rex	https://metahub.info/jwa-dinosaur/indominus-rex/			Immunity
+1541702155-168	https://metahub.info/jwa-dinodex/	Paramoloch	https://metahub.info/jwa-dinosaur/paramoloch/		Low Stunning Strike
+1541702224-291	https://metahub.info/jwa-dinodex/	Gigaspikasaur	https://metahub.info/jwa-dinosaur/gigaspikasaur/		Decelerating Impact
+1541702092-68	https://metahub.info/jwa-dinodex/	Tenontosaurus	https://metahub.info/jwa-dinosaur/tenontosaurus/			Swap In Stun
+1541702243-323	https://metahub.info/jwa-dinodex/	Echo	https://metahub.info/jwa-dinosaur/echo/		Strike
+1541702061-8	https://metahub.info/jwa-dinodex/	Wuerhosaurus	https://metahub.info/jwa-dinosaur/wuerhosaurus/		Superiority Strike
+1541702162-177	https://metahub.info/jwa-dinodex/	Ophiacodon	https://metahub.info/jwa-dinosaur/ophiacodon/		Armor Piercing Rampage
+1541702241-319	https://metahub.info/jwa-dinodex/	Edmontosaurus	https://metahub.info/jwa-dinosaur/edmontosaurus/		Superiority Strike
+1541702185-223	https://metahub.info/jwa-dinodex/	Megalosaurus	https://metahub.info/jwa-dinosaur/megalosaurus/			Counter-attack (1)
+1541702191-236	https://metahub.info/jwa-dinodex/	Magnapyritor	https://metahub.info/jwa-dinosaur/magnapyritor/		Nullifying Impact
+1541702111-92	https://metahub.info/jwa-dinodex/	Stegoceratops	https://metahub.info/jwa-dinosaur/stegoceratops/		Minimal Stunning Strike
+1541702271-372	https://metahub.info/jwa-dinodex/	Dilophosaurus	https://metahub.info/jwa-dinosaur/dilophosaurus/		Nullifying Strike
+1541702195-241	https://metahub.info/jwa-dinodex/	Koolasuchus Gen 2	https://metahub.info/jwa-dinosaur/koolasuchus-gen-2/		Crippling Distraction
+1541702314-443	https://metahub.info/jwa-dinodex/	Alanqa	https://metahub.info/jwa-dinosaur/alanqa/			Swap In Invincibility
+1541702218-281	https://metahub.info/jwa-dinodex/	Gorgosuchus	https://metahub.info/jwa-dinosaur/gorgosuchus/		Defense Shattering Strike
+1541702210-268	https://metahub.info/jwa-dinodex/	Indominus Rex	https://metahub.info/jwa-dinosaur/indominus-rex/		Cloak
+1541702170-191	https://metahub.info/jwa-dinodex/	Nodopatosaurus	https://metahub.info/jwa-dinosaur/nodopatasaurus/		Decelerating Impact
+1541702187-226	https://metahub.info/jwa-dinodex/	Majungasaurus	https://metahub.info/jwa-dinosaur/majungasaurus/			Swap In Ferocity
+1541702187-224	https://metahub.info/jwa-dinodex/	Majungasaurus	https://metahub.info/jwa-dinosaur/majungasaurus/		Short Defense
+1541702235-307	https://metahub.info/jwa-dinodex/	Erlidominus	https://metahub.info/jwa-dinosaur/erlidominus/		Minimal Speedup Strike
+1541702220-283	https://metahub.info/jwa-dinodex/	Gorgosaurus	https://metahub.info/jwa-dinosaur/gorgosaurus/		Defense Shattering Impact
+1541702287-398	https://metahub.info/jwa-dinodex/	Baryonyx Gen 2	https://metahub.info/jwa-dinosaur/baryonyx-gen-2/			Swap In Strike
+1541702199-250	https://metahub.info/jwa-dinodex/	Kentrosaurus	https://metahub.info/jwa-dinosaur/kentrosaurus/			Counter-Attack (0.5)
+1541702071-24	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex Gen 2	https://metahub.info/jwa-dinosaur/tyrannosaurus-gen2/		Armor Piercing Rampage
+1541702153-164	https://metahub.info/jwa-dinodex/	Parasaurolophus	https://metahub.info/jwa-dinosaur/parasaurolophus/		Impact and Run
+1541702103-81	https://metahub.info/jwa-dinodex/	Stygimoloch Gen 2	https://metahub.info/jwa-dinosaur/stygimoloch-gen-2/		Minimal Speedup Strike
+1541702289-399	https://metahub.info/jwa-dinodex/	Baryonyx	https://metahub.info/jwa-dinosaur/baryonyx/		Armor Piercing Strike
+1541702168-189	https://metahub.info/jwa-dinodex/	Nodopatotitan	https://metahub.info/jwa-dinosaur/nodopatotitan/			Counter-Attack (0.25)
+1541702145-148	https://metahub.info/jwa-dinodex/	Pteranodon	https://metahub.info/jwa-dinosaur/pteranodon/		Defense Shattering Strike
+1541702233-305	https://metahub.info/jwa-dinodex/	Erlikosaurus	https://metahub.info/jwa-dinosaur/erlikosaurus/		Strike and Run
+1541702226-295	https://metahub.info/jwa-dinodex/	Gallimimus	https://metahub.info/jwa-dinosaur/gallimimus/		Evasive Strike
+1541702216-276	https://metahub.info/jwa-dinodex/	Gryposuchus	https://metahub.info/jwa-dinosaur/gryposuchus/		Ferocious Strike
+1541702086-55	https://metahub.info/jwa-dinodex/	Triceratops Gen 2	https://metahub.info/jwa-dinosaur/triceratops-gen2/		Rampage
+1541702155-169	https://metahub.info/jwa-dinodex/	Paramoloch	https://metahub.info/jwa-dinosaur/paramoloch/		Rampage and Run
+1541702061-7	https://metahub.info/jwa-dinodex/	Wuerhosaurus	https://metahub.info/jwa-dinosaur/wuerhosaurus/		Crippling Distraction
+1541702277-379	https://metahub.info/jwa-dinodex/	Concavenator	https://metahub.info/jwa-dinosaur/concavenator/		Pinning Strike
+1541702132-131	https://metahub.info/jwa-dinodex/	Rajakylosaurus	https://metahub.info/jwa-dinosaur/rajakylosaurus/			Counter-attack (1)
+1541702271-371	https://metahub.info/jwa-dinodex/	Dilophosaurus	https://metahub.info/jwa-dinosaur/dilophosaurus/		Nullifying Impact
+1541702199-247	https://metahub.info/jwa-dinodex/	Kentrosaurus	https://metahub.info/jwa-dinosaur/kentrosaurus/		Crippling Distraction
+1541702239-314	https://metahub.info/jwa-dinodex/	Einiasuchus	https://metahub.info/jwa-dinosaur/einiasuchus/		Ferocious Strike
+1541702092-67	https://metahub.info/jwa-dinodex/	Tenontosaurus	https://metahub.info/jwa-dinosaur/tenontosaurus/		Superiority Strike
+1541702216-278	https://metahub.info/jwa-dinodex/	Gryposuchus	https://metahub.info/jwa-dinosaur/gryposuchus/		Vulnerability Strike
+1541702069-21	https://metahub.info/jwa-dinodex/	Utahraptor	https://metahub.info/jwa-dinosaur/utahraptor/		Pounce
+1541702296-410	https://metahub.info/jwa-dinodex/	Apatosaurus	https://metahub.info/jwa-dinosaur/apatosaurus/		Pinning Strike
+1541702082-45	https://metahub.info/jwa-dinodex/	Tryostronix	https://metahub.info/jwa-dinosaur/tryostronix/		Defense Shattering Rampage
+1541702241-320	https://metahub.info/jwa-dinodex/	Edmontosaurus	https://metahub.info/jwa-dinosaur/edmontosaurus/			Swap In Stun
+1541702130-123	https://metahub.info/jwa-dinodex/	Rajasaurus	https://metahub.info/jwa-dinosaur/rajasaurus/		Extended Critical Strike
+1541702308-431	https://metahub.info/jwa-dinodex/	Amargasaurus	https://metahub.info/jwa-dinosaur/amargasaurus/		Decelerating Impact
+1541702277-378	https://metahub.info/jwa-dinodex/	Concavenator	https://metahub.info/jwa-dinosaur/concavenator/		Armor Piercing Impact
+1541702298-413	https://metahub.info/jwa-dinodex/	Ankyntrosaurus	https://metahub.info/jwa-dinosaur/ankyntrosaurus/		Nullifying Strike
+1541702130-126	https://metahub.info/jwa-dinodex/	Rajasaurus	https://metahub.info/jwa-dinosaur/rajasaurus/			Counter-attack (1)
+1541702174-202	https://metahub.info/jwa-dinodex/	Monomimus	https://metahub.info/jwa-dinosaur/monomimus/		Nullifying Strike
+1541702109-88	https://metahub.info/jwa-dinodex/	Stegodeus	https://metahub.info/jwa-dinosaur/stegodeus/		Short Defense
+1541702159-173	https://metahub.info/jwa-dinodex/	Ornithomimus	https://metahub.info/jwa-dinosaur/ornithomimus/		Crippling Distraction
+1541702145-149	https://metahub.info/jwa-dinodex/	Pteranodon	https://metahub.info/jwa-dinosaur/pteranodon/		Impact and Run
+1541702252-338	https://metahub.info/jwa-dinodex/	Diplotator	https://metahub.info/jwa-dinosaur/diplotator/		Ready to Crush
+1541702166-183	https://metahub.info/jwa-dinodex/	Nodosaurus	https://metahub.info/jwa-dinosaur/nodosaurus/		Short Defense
+1541702281-387	https://metahub.info/jwa-dinodex/	Carnotaurus	https://metahub.info/jwa-dinosaur/carnotaurus/		Vulnerability Strike
+1541702314-442	https://metahub.info/jwa-dinodex/	Alanqa	https://metahub.info/jwa-dinosaur/alanqa/		Superiority Strike
+1541702212-271	https://metahub.info/jwa-dinodex/	Iguanodon	https://metahub.info/jwa-dinosaur/iguanodon/		Superiority Strike
+1541702298-415	https://metahub.info/jwa-dinodex/	Ankyntrosaurus	https://metahub.info/jwa-dinosaur/ankyntrosaurus/			Counter-Attack (0.5)
+1541702092-65	https://metahub.info/jwa-dinodex/	Tenontosaurus	https://metahub.info/jwa-dinosaur/tenontosaurus/		Distracting Strike
+1541702080-42	https://metahub.info/jwa-dinodex/	Tuojiangosaurus	https://metahub.info/jwa-dinosaur/tuojiangosaurus/			Counter-Attack (0.25)
+1541702206-258	https://metahub.info/jwa-dinodex/	Irritator	https://metahub.info/jwa-dinosaur/irritator/		Defense Shattering Impact
+1541702153-165	https://metahub.info/jwa-dinodex/	Parasaurolophus	https://metahub.info/jwa-dinosaur/parasaurolophus/		Superiority Strike
+1541702134-133	https://metahub.info/jwa-dinodex/	Quetzalcoatlus	https://metahub.info/jwa-dinosaur/quetzalcoatlus/		Long Protection
+1541702189-231	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/			Counter-attack (1)
+1541702134-132	https://metahub.info/jwa-dinodex/	Quetzalcoatlus	https://metahub.info/jwa-dinosaur/quetzalcoatlus/		Impact and Run
+1541702317-448	https://metahub.info/jwa-dinodex/	Alankylosaurus	https://metahub.info/jwa-dinosaur/alankylosaurus/			Swap In Invincibility
+1541702170-192	https://metahub.info/jwa-dinodex/	Nodopatosaurus	https://metahub.info/jwa-dinosaur/nodopatasaurus/		Pinning Strike
+1541702138-142	https://metahub.info/jwa-dinodex/	Pyroraptor	https://metahub.info/jwa-dinosaur/pyroraptor/		Wounding Impact
+1541702245-325	https://metahub.info/jwa-dinodex/	Dsungaripterus	https://metahub.info/jwa-dinosaur/dsungariptus/		Ferocious Strike
+1541702310-437	https://metahub.info/jwa-dinodex/	Allosinosaurus	https://metahub.info/jwa-dinosaur/allosinosaurus/		Instant Charge
+1541702124-114	https://metahub.info/jwa-dinodex/	Secodontosaurus	https://metahub.info/jwa-dinosaur/secodontosaurus/		Defense Shattering Strike
+1541702086-56	https://metahub.info/jwa-dinodex/	Triceratops Gen 2	https://metahub.info/jwa-dinosaur/triceratops-gen2/			Swap In Stun
+1541702143-147	https://metahub.info/jwa-dinodex/	Purrusaurus	https://metahub.info/jwa-dinosaur/purrusaurus/		Vulnerability Strike
+1541702092-66	https://metahub.info/jwa-dinodex/	Tenontosaurus	https://metahub.info/jwa-dinosaur/tenontosaurus/		Greater Stunning Strike
+1541702124-112	https://metahub.info/jwa-dinodex/	Secodontosaurus	https://metahub.info/jwa-dinosaur/secodontosaurus/		Critical Impact
+1541702128-120	https://metahub.info/jwa-dinodex/	Sarcorixis	https://metahub.info/jwa-dinosaur/sarcorixis/		Greater Stunning Impact
+1541702147-153	https://metahub.info/jwa-dinodex/	Proceratosaurus	https://metahub.info/jwa-dinosaur/proceratosaurus/		Distracting Impact
+1541702080-41	https://metahub.info/jwa-dinodex/	Tuojiangosaurus	https://metahub.info/jwa-dinosaur/tuojiangosaurus/		Thagomizer
+1541702214-274	https://metahub.info/jwa-dinodex/	Hatzegopteryx	https://metahub.info/jwa-dinosaur/hatzegopteryx/		Superiority Strike
+1541702314-440	https://metahub.info/jwa-dinodex/	Alanqa	https://metahub.info/jwa-dinosaur/alanqa/		Long Invicibility
+1541702157-171	https://metahub.info/jwa-dinodex/	Ouranosaurus	https://metahub.info/jwa-dinosaur/ouranosaurus/		Impact and Run
+1541702076-33	https://metahub.info/jwa-dinodex/	Tupandactylus	https://metahub.info/jwa-dinosaur/tupandactylus/			Swap In Ferocity
+1541702187-225	https://metahub.info/jwa-dinodex/	Majungasaurus	https://metahub.info/jwa-dinosaur/majungasaurus/			Counter-attack (1)
+1541702275-377	https://metahub.info/jwa-dinodex/	Deinocheirus	https://metahub.info/jwa-dinosaur/deinocheirus/		Rampage
+1541702224-290	https://metahub.info/jwa-dinodex/	Gigaspikasaur	https://metahub.info/jwa-dinosaur/gigaspikasaur/		Armor Piercing Impact
+1541702292-404	https://metahub.info/jwa-dinodex/	Argentinosaurus	https://metahub.info/jwa-dinosaur/argentinosaurus/		Pinning Strike
+1541702285-392	https://metahub.info/jwa-dinodex/	Blue	https://metahub.info/jwa-dinosaur/blue/		Pounce
+1541702164-180	https://metahub.info/jwa-dinodex/	Nundasuchus	https://metahub.info/jwa-dinosaur/nundasuchus/		Ferocious Strike
+1541702111-91	https://metahub.info/jwa-dinodex/	Stegoceratops	https://metahub.info/jwa-dinosaur/stegoceratops/		Greater Stunning Strike
+1541702084-50	https://metahub.info/jwa-dinodex/	Trykosaurus	https://metahub.info/jwa-dinosaur/trykosaurus/		Armor Piercing Strike
+1541702136-138	https://metahub.info/jwa-dinodex/	Pyrritator	https://metahub.info/jwa-dinosaur/pyrritator/		Distracting Rampage
+1541702088-57	https://metahub.info/jwa-dinodex/	Triceratops	https://metahub.info/jwa-dinosaur/triceratops/		Greater Stunning Strike
+1541702176-205	https://metahub.info/jwa-dinodex/	Monolophosaurus Gen 2	https://metahub.info/jwa-dinosaur/monolophosaurus-gen-2/		Nullifying Strike
+1541702113-95	https://metahub.info/jwa-dinodex/	Spinotasuchus	https://metahub.info/jwa-dinosaur/spinotasuchus/		Critical Impact
+1541702132-129	https://metahub.info/jwa-dinodex/	Rajakylosaurus	https://metahub.info/jwa-dinosaur/rajakylosaurus/		Long Protection
+1541702285-393	https://metahub.info/jwa-dinodex/	Blue	https://metahub.info/jwa-dinosaur/blue/		Short Defense
+1541702130-124	https://metahub.info/jwa-dinodex/	Rajasaurus	https://metahub.info/jwa-dinosaur/rajasaurus/		Long Protection
+1541702206-259	https://metahub.info/jwa-dinodex/	Irritator	https://metahub.info/jwa-dinosaur/irritator/		Defense Shattering Strike
+1541702088-58	https://metahub.info/jwa-dinodex/	Triceratops	https://metahub.info/jwa-dinosaur/triceratops/		Minor Stunning Strike
+1541702264-360	https://metahub.info/jwa-dinodex/	Diloranosaurus	https://metahub.info/jwa-dinosaur/diloranosaurus/		Greater Stunning Rampage
+1541702226-296	https://metahub.info/jwa-dinodex/	Gallimimus	https://metahub.info/jwa-dinosaur/gallimimus/		Impact and Run
+1541702157-170	https://metahub.info/jwa-dinodex/	Ouranosaurus	https://metahub.info/jwa-dinosaur/ouranosaurus/		Greater Stunning Rampage
+1541702252-335	https://metahub.info/jwa-dinodex/	Diplotator	https://metahub.info/jwa-dinosaur/diplotator/		Defense Shattering Impact
+1541702264-362	https://metahub.info/jwa-dinodex/	Diloranosaurus	https://metahub.info/jwa-dinosaur/diloranosaurus/		Superiority Strike
+1541702298-414	https://metahub.info/jwa-dinodex/	Ankyntrosaurus	https://metahub.info/jwa-dinosaur/ankyntrosaurus/		Thagomizer
+1541702256-345	https://metahub.info/jwa-dinodex/	Diplocaulus	https://metahub.info/jwa-dinosaur/diplocaulus/			Swap In Distraction
+1541702180-214	https://metahub.info/jwa-dinodex/	Monolometrodon	https://metahub.info/jwa-dinosaur/monolometrodon/			Immunity
+1541702247-330	https://metahub.info/jwa-dinodex/	Dracorex Gen 2	https://metahub.info/jwa-dinosaur/dracorex-gen-2/			Swap In Strike
+1541702287-396	https://metahub.info/jwa-dinodex/	Baryonyx Gen 2	https://metahub.info/jwa-dinosaur/baryonyx-gen-2/		Defense Shattering Impact
+1541702122-109	https://metahub.info/jwa-dinodex/	Sinoceratops	https://metahub.info/jwa-dinosaur/sinoceratops/		Instant Charge
+1541702174-199	https://metahub.info/jwa-dinodex/	Monomimus	https://metahub.info/jwa-dinosaur/monomimus/		Distracting Impact
+1541702222-288	https://metahub.info/jwa-dinodex/	Giraffatitan	https://metahub.info/jwa-dinosaur/giraffatitan/		Superiority Strike
+1541702237-312	https://metahub.info/jwa-dinodex/	Einiosaurus	https://metahub.info/jwa-dinosaur/einiosaurus-2/		Stunning Impact
+1541702264-359	https://metahub.info/jwa-dinodex/	Diloranosaurus	https://metahub.info/jwa-dinosaur/diloranosaurus/		Distracting Impact
+1541702243-321	https://metahub.info/jwa-dinodex/	Echo	https://metahub.info/jwa-dinosaur/echo/		Cleansing Impact
+1541702262-358	https://metahub.info/jwa-dinodex/	Dimetrodon	https://metahub.info/jwa-dinosaur/dimetrodon/			Immunity
+1541702258-349	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/		Short Defense
+1541702157-172	https://metahub.info/jwa-dinodex/	Ouranosaurus	https://metahub.info/jwa-dinosaur/ouranosaurus/		Superiority Strike
+1541702266-364	https://metahub.info/jwa-dinodex/	Diloracheirus	https://metahub.info/jwa-dinosaur/diloracheirus/		Greater Stunning Rampage
+1541702182-218	https://metahub.info/jwa-dinodex/	Megalosuchus	https://metahub.info/jwa-dinosaur/megalosuchus/		Short Defense
+1541702124-115	https://metahub.info/jwa-dinodex/	Secodontosaurus	https://metahub.info/jwa-dinosaur/secodontosaurus/			Immunity
+1541702218-279	https://metahub.info/jwa-dinodex/	Gorgosuchus	https://metahub.info/jwa-dinosaur/gorgosuchus/		Cleansing Impact
+1541702189-229	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/		Pinning Strike
+1541702084-52	https://metahub.info/jwa-dinodex/	Trykosaurus	https://metahub.info/jwa-dinosaur/trykosaurus/		Instant Invincibility
+1541702119-107	https://metahub.info/jwa-dinodex/	Spinosaurus	https://metahub.info/jwa-dinosaur/spinosaurus/		Gashing Wound
+1541702228-299	https://metahub.info/jwa-dinodex/	Euoplocephalus	https://metahub.info/jwa-dinosaur/euoplocephalus/		Vulnerability Strike
+1541702210-267	https://metahub.info/jwa-dinodex/	Indominus Rex	https://metahub.info/jwa-dinosaur/indominus-rex/		Armor Piercing Strike
+1541702101-77	https://metahub.info/jwa-dinodex/	Suchomimus	https://metahub.info/jwa-dinosaur/suchomimus/		Gashing Wound
+1541702128-121	https://metahub.info/jwa-dinodex/	Sarcorixis	https://metahub.info/jwa-dinosaur/sarcorixis/		Lockdown Strike
+1541702206-260	https://metahub.info/jwa-dinodex/	Irritator	https://metahub.info/jwa-dinosaur/irritator/		Ready to Crush
+1541702216-277	https://metahub.info/jwa-dinodex/	Gryposuchus	https://metahub.info/jwa-dinosaur/gryposuchus/		Lockdown Impact
+1541702182-215	https://metahub.info/jwa-dinodex/	Megalosuchus	https://metahub.info/jwa-dinosaur/megalosuchus/		Critical Impact
+1541702126-116	https://metahub.info/jwa-dinodex/	Sarcosuchus	https://metahub.info/jwa-dinosaur/sarcosuchus-2/		Lockdown Impact
+1541702119-108	https://metahub.info/jwa-dinodex/	Spinosaurus	https://metahub.info/jwa-dinosaur/spinosaurus/		Strike
+1541702073-27	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex	https://metahub.info/jwa-dinosaur/tyrannosaurus-rex/		Defense Shattering Rampage
+1541702078-34	https://metahub.info/jwa-dinodex/	Tuoramoloch	https://metahub.info/jwa-dinosaur/tuoramoloch/		Greater Stunning Rampage
+1541702273-373	https://metahub.info/jwa-dinodex/	Delta	https://metahub.info/jwa-dinosaur/delta/		Impact and Run
+1541702159-175	https://metahub.info/jwa-dinodex/	Ornithomimus	https://metahub.info/jwa-dinosaur/ornithomimus/		Impact and Run
+1541702065-12	https://metahub.info/jwa-dinodex/	Utasinoraptor	https://metahub.info/jwa-dinosaur/utasinoraptor/		Critical Impact
+1541702306-429	https://metahub.info/jwa-dinodex/	Amargocephalus	https://metahub.info/jwa-dinosaur/amargocephalus-2/		Vulnerability Strike
+1541702317-444	https://metahub.info/jwa-dinodex/	Alankylosaurus	https://metahub.info/jwa-dinosaur/alankylosaurus/		Long Invicibility
+1541702203-256	https://metahub.info/jwa-dinodex/	Irritator Gen 2	https://metahub.info/jwa-dinosaur/irritator-gen-2/		Ready to Crush
+1541702168-185	https://metahub.info/jwa-dinodex/	Nodopatotitan	https://metahub.info/jwa-dinosaur/nodopatotitan/		Bellow
+1541702136-137	https://metahub.info/jwa-dinodex/	Pyrritator	https://metahub.info/jwa-dinosaur/pyrritator/		Armor Piercing Strike
+1541702099-75	https://metahub.info/jwa-dinodex/	Suchotator	https://metahub.info/jwa-dinosaur/suchotator/		Nullifying Impact
+1541702300-417	https://metahub.info/jwa-dinodex/	Ankylosaurus Gen 2	https://metahub.info/jwa-dinosaur/ankylosaurus-gen-2/		Vulnerability Strike
+1541702231-300	https://metahub.info/jwa-dinodex/	Erlikosaurus Gen 2	https://metahub.info/jwa-dinosaur/erlikosaurus-gen-2/		Debilitating Distraction
+1541702260-353	https://metahub.info/jwa-dinodex/	Dimetrodon Gen 2	https://metahub.info/jwa-dinosaur/dimetrodon-gen-2/		Defense Shattering Strike
+1541702193-238	https://metahub.info/jwa-dinodex/	Lythronax	https://metahub.info/jwa-dinosaur/lythronax/		Long Protection
+1541702281-388	https://metahub.info/jwa-dinodex/	Carnotaurus	https://metahub.info/jwa-dinosaur/carnotaurus/			Counter-attack (1)
+1541702178-207	https://metahub.info/jwa-dinodex/	Monolophosaurus	https://metahub.info/jwa-dinosaur/monolophosaurus/		Distracting Rampage
+1541702172-195	https://metahub.info/jwa-dinodex/	Monostegotops	https://metahub.info/jwa-dinosaur/monostegotops/		Nullifying Impact
+1541702249-333	https://metahub.info/jwa-dinodex/	Dracorex	https://metahub.info/jwa-dinosaur/dracorex/		Minor Stunning Strike
+1541702203-257	https://metahub.info/jwa-dinodex/	Irritator Gen 2	https://metahub.info/jwa-dinosaur/irritator-gen-2/			Swap In Strike
+1541702260-352	https://metahub.info/jwa-dinodex/	Dimetrodon Gen 2	https://metahub.info/jwa-dinosaur/dimetrodon-gen-2/		Armor Piercing Rampage
+1541702084-53	https://metahub.info/jwa-dinodex/	Trykosaurus	https://metahub.info/jwa-dinosaur/trykosaurus/			Counter-Attack (0.25)
+1541702178-208	https://metahub.info/jwa-dinodex/	Monolophosaurus	https://metahub.info/jwa-dinosaur/monolophosaurus/		Distracting Strike
+1541702162-179	https://metahub.info/jwa-dinodex/	Ophiacodon	https://metahub.info/jwa-dinosaur/ophiacodon/			Immunity
+1541702247-329	https://metahub.info/jwa-dinodex/	Dracorex Gen 2	https://metahub.info/jwa-dinosaur/dracorex-gen-2/		Low Stunning Strike
+1541702078-35	https://metahub.info/jwa-dinodex/	Tuoramoloch	https://metahub.info/jwa-dinosaur/tuoramoloch/		Impact and Run
+1541702088-59	https://metahub.info/jwa-dinodex/	Triceratops	https://metahub.info/jwa-dinosaur/triceratops/		Stunning Impact
+1541702245-324	https://metahub.info/jwa-dinodex/	Dsungaripterus	https://metahub.info/jwa-dinosaur/dsungariptus/		Defense Shattering Strike
+1541702273-375	https://metahub.info/jwa-dinodex/	Delta	https://metahub.info/jwa-dinosaur/delta/		Strike
+1541702061-9	https://metahub.info/jwa-dinodex/	Wuerhosaurus	https://metahub.info/jwa-dinosaur/wuerhosaurus/		Thagomizer
+1541702147-155	https://metahub.info/jwa-dinodex/	Proceratosaurus	https://metahub.info/jwa-dinosaur/proceratosaurus/		Slowing Impact
+1541702201-251	https://metahub.info/jwa-dinodex/	Kaprosuchus	https://metahub.info/jwa-dinosaur/kaprosuchus/		Cleansing Impact
+1541702130-125	https://metahub.info/jwa-dinodex/	Rajasaurus	https://metahub.info/jwa-dinosaur/rajasaurus/		Pinning Strike
+1541702185-221	https://metahub.info/jwa-dinodex/	Megalosaurus	https://metahub.info/jwa-dinosaur/megalosaurus/		Pinning Strike
+1541702235-308	https://metahub.info/jwa-dinodex/	Erlidominus	https://metahub.info/jwa-dinosaur/erlidominus/		Rampage
+1541702185-222	https://metahub.info/jwa-dinodex/	Megalosaurus	https://metahub.info/jwa-dinosaur/megalosaurus/		Short Defense
+1541702239-313	https://metahub.info/jwa-dinodex/	Einiasuchus	https://metahub.info/jwa-dinosaur/einiasuchus/		Adrenaline Pulse
+1541702191-233	https://metahub.info/jwa-dinodex/	Magnapyritor	https://metahub.info/jwa-dinosaur/magnapyritor/		Armor Piercing Impact
+1541702141-143	https://metahub.info/jwa-dinodex/	Purrusaurus Gen 2	https://metahub.info/jwa-dinosaur/purrusaurus-gen2/		Lockdown Impact
+1541702073-28	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex	https://metahub.info/jwa-dinosaur/tyrannosaurus-rex/		Defense Shattering Strike
+1541702084-51	https://metahub.info/jwa-dinodex/	Trykosaurus	https://metahub.info/jwa-dinosaur/trykosaurus/		Defense Shattering Rampage
+1541702314-441	https://metahub.info/jwa-dinodex/	Alanqa	https://metahub.info/jwa-dinosaur/alanqa/		Rampage
+1541702168-186	https://metahub.info/jwa-dinodex/	Nodopatotitan	https://metahub.info/jwa-dinosaur/nodopatotitan/		Decelerating Impact
+1541702249-331	https://metahub.info/jwa-dinodex/	Dracorex	https://metahub.info/jwa-dinosaur/dracorex/		Impact and Run
+1541702277-381	https://metahub.info/jwa-dinodex/	Concavenator	https://metahub.info/jwa-dinosaur/concavenator/			Counter-attack (1)
+1541702122-110	https://metahub.info/jwa-dinodex/	Sinoceratops	https://metahub.info/jwa-dinosaur/sinoceratops/		Low Stunning Strike
+1541702281-386	https://metahub.info/jwa-dinodex/	Carnotaurus	https://metahub.info/jwa-dinosaur/carnotaurus/		Short Defense
+1541702306-428	https://metahub.info/jwa-dinodex/	Amargocephalus	https://metahub.info/jwa-dinosaur/amargocephalus-2/		Instant Invincibility
+1541702174-203	https://metahub.info/jwa-dinodex/	Monomimus	https://metahub.info/jwa-dinosaur/monomimus/			Immunity
+1541702113-96	https://metahub.info/jwa-dinodex/	Spinotasuchus	https://metahub.info/jwa-dinosaur/spinotasuchus/		Lethal Wound
+1541702189-232	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/			Swap In Ferocity
+1541702134-135	https://metahub.info/jwa-dinodex/	Quetzalcoatlus	https://metahub.info/jwa-dinosaur/quetzalcoatlus/			Swap In Defense
+1541702264-361	https://metahub.info/jwa-dinodex/	Diloranosaurus	https://metahub.info/jwa-dinosaur/diloranosaurus/		Impact and Run
+1541702080-43	https://metahub.info/jwa-dinodex/	Tuojiangosaurus	https://metahub.info/jwa-dinosaur/tuojiangosaurus/			Swap In Slow
+1541702172-196	https://metahub.info/jwa-dinodex/	Monostegotops	https://metahub.info/jwa-dinosaur/monostegotops/		Nullifying Strike
+1541702151-162	https://metahub.info/jwa-dinodex/	Postimetrodon	https://metahub.info/jwa-dinosaur/postimetrodon/		Ferocious Strike
+1541702166-182	https://metahub.info/jwa-dinodex/	Nodosaurus	https://metahub.info/jwa-dinosaur/nodosaurus/		Armor Piercing Impact
+1541702296-409	https://metahub.info/jwa-dinodex/	Apatosaurus	https://metahub.info/jwa-dinosaur/apatosaurus/		Decelerating Impact
+1541702197-245	https://metahub.info/jwa-dinodex/	Koolasuchus	https://metahub.info/jwa-dinosaur/koolasuchus/		Nullifying Strike
+1541702109-89	https://metahub.info/jwa-dinodex/	Stegodeus	https://metahub.info/jwa-dinosaur/stegodeus/		Superiority Strike
+1541702254-342	https://metahub.info/jwa-dinodex/	Diplocaulus Gen 2	https://metahub.info/jwa-dinosaur/diplocaulus-gen-2/			Swap In Distraction
+1541702076-29	https://metahub.info/jwa-dinodex/	Tupandactylus	https://metahub.info/jwa-dinosaur/tupandactylus/		Defense Shattering Strike
+1541702099-73	https://metahub.info/jwa-dinodex/	Suchotator	https://metahub.info/jwa-dinosaur/suchotator/		Crippling Distraction
+1541702294-408	https://metahub.info/jwa-dinodex/	Arambourgiania	https://metahub.info/jwa-dinosaur/arambourgiania/			Swap In Invincibility
+1541702143-146	https://metahub.info/jwa-dinodex/	Purrusaurus	https://metahub.info/jwa-dinosaur/purrusaurus/		Lockdown Impact
+1541702233-303	https://metahub.info/jwa-dinodex/	Erlikosaurus	https://metahub.info/jwa-dinosaur/erlikosaurus/		Minimal Speedup Strike
+1541702233-304	https://metahub.info/jwa-dinodex/	Erlikosaurus	https://metahub.info/jwa-dinosaur/erlikosaurus/		Rampage
+1541702128-119	https://metahub.info/jwa-dinodex/	Sarcorixis	https://metahub.info/jwa-dinosaur/sarcorixis/		Ferocious Strike
+1541702266-366	https://metahub.info/jwa-dinodex/	Diloracheirus	https://metahub.info/jwa-dinosaur/diloracheirus/		Superiority Strike
+1541702082-44	https://metahub.info/jwa-dinodex/	Tryostronix	https://metahub.info/jwa-dinosaur/tryostronix/		Armor Piercing Strike
+1541702132-128	https://metahub.info/jwa-dinodex/	Rajakylosaurus	https://metahub.info/jwa-dinosaur/rajakylosaurus/		Instant Invincibility
+1541702258-346	https://metahub.info/jwa-dinodex/	Diorajasaur	https://metahub.info/jwa-dinosaur/diorajasaur/		Distracting Impact
+1541702317-446	https://metahub.info/jwa-dinodex/	Alankylosaurus	https://metahub.info/jwa-dinosaur/alankylosaurus/		Short Defense
+1541702191-235	https://metahub.info/jwa-dinodex/	Magnapyritor	https://metahub.info/jwa-dinosaur/magnapyritor/		Defense Shattering Rampage
+1541702128-122	https://metahub.info/jwa-dinodex/	Sarcorixis	https://metahub.info/jwa-dinosaur/sarcorixis/			Swap In Defense
+1541702069-22	https://metahub.info/jwa-dinodex/	Utahraptor	https://metahub.info/jwa-dinosaur/utahraptor/		Strike
+1541702228-298	https://metahub.info/jwa-dinodex/	Euoplocephalus	https://metahub.info/jwa-dinosaur/euoplocephalus/		Impact
+1541702166-184	https://metahub.info/jwa-dinodex/	Nodosaurus	https://metahub.info/jwa-dinosaur/nodosaurus/		Vulnerability Strike
+1541702099-76	https://metahub.info/jwa-dinodex/	Suchotator	https://metahub.info/jwa-dinosaur/suchotator/		Superiority Strike
+1541702218-280	https://metahub.info/jwa-dinodex/	Gorgosuchus	https://metahub.info/jwa-dinosaur/gorgosuchus/		Defense Shattering Rampage
+1541702212-270	https://metahub.info/jwa-dinodex/	Iguanodon	https://metahub.info/jwa-dinosaur/iguanodon/		Greater Stunning Impact
+1541702128-118	https://metahub.info/jwa-dinodex/	Sarcorixis	https://metahub.info/jwa-dinosaur/sarcorixis/		Armor Piercing Strike
+1541702069-20	https://metahub.info/jwa-dinodex/	Utahraptor	https://metahub.info/jwa-dinosaur/utahraptor/		Critical Impact
+1541702145-152	https://metahub.info/jwa-dinodex/	Pteranodon	https://metahub.info/jwa-dinosaur/pteranodon/			Swap In Ferocity
+1541702277-380	https://metahub.info/jwa-dinodex/	Concavenator	https://metahub.info/jwa-dinosaur/concavenator/		Short Defense
+1541702138-141	https://metahub.info/jwa-dinodex/	Pyroraptor	https://metahub.info/jwa-dinosaur/pyroraptor/		Strike
+1541702105-82	https://metahub.info/jwa-dinodex/	Stygimoloch	https://metahub.info/jwa-dinosaur/stygimoloch/		Impact and Run
+1541702317-445	https://metahub.info/jwa-dinodex/	Alankylosaurus	https://metahub.info/jwa-dinosaur/alankylosaurus/		Rampage
+1541702283-391	https://metahub.info/jwa-dinodex/	Brachiosaurus	https://metahub.info/jwa-dinosaur/brachiosaurus/		Superiority Strike
+1541702254-340	https://metahub.info/jwa-dinodex/	Diplocaulus Gen 2	https://metahub.info/jwa-dinosaur/diplocaulus-gen-2/		Distracting Impact
+1541702235-306	https://metahub.info/jwa-dinodex/	Erlidominus	https://metahub.info/jwa-dinosaur/erlidominus/		Cloak
+1541702189-230	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/		Short Defense
+1541702262-355	https://metahub.info/jwa-dinodex/	Dimetrodon	https://metahub.info/jwa-dinosaur/dimetrodon/		Critical Impact
+1541702109-87	https://metahub.info/jwa-dinodex/	Stegodeus	https://metahub.info/jwa-dinosaur/stegodeus/		Armor Piercing Rampage
+1541702076-32	https://metahub.info/jwa-dinodex/	Tupandactylus	https://metahub.info/jwa-dinosaur/tupandactylus/			Counter-attack (1)
+1541702268-367	https://metahub.info/jwa-dinodex/	Dilophosaurus Gen 2	https://metahub.info/jwa-dinosaur/dilophosaurus-gen-2/		Distracting Impact
+1541702239-315	https://metahub.info/jwa-dinodex/	Einiasuchus	https://metahub.info/jwa-dinosaur/einiasuchus/		Minimal Stunning Strike
+1541702243-322	https://metahub.info/jwa-dinodex/	Echo	https://metahub.info/jwa-dinosaur/echo/		Pounce
+1541702090-60	https://metahub.info/jwa-dinodex/	Tragodistis	https://metahub.info/jwa-dinosaur/tragodistis/		Greater Stunning Strike
+1541702262-356	https://metahub.info/jwa-dinodex/	Dimetrodon	https://metahub.info/jwa-dinosaur/dimetrodon/		Defense Shattering Impact
+1541702113-98	https://metahub.info/jwa-dinodex/	Spinotasuchus	https://metahub.info/jwa-dinosaur/spinotasuchus/		Swoop
+1541702310-436	https://metahub.info/jwa-dinodex/	Allosinosaurus	https://metahub.info/jwa-dinosaur/allosinosaurus/		Defense Shattering Strike
+1541702094-69	https://metahub.info/jwa-dinodex/	Tarbosaurus	https://metahub.info/jwa-dinosaur/tarbosaurus/		Armor Piercing Impact
+1541702256-343	https://metahub.info/jwa-dinodex/	Diplocaulus	https://metahub.info/jwa-dinosaur/diplocaulus/		Distracting Impact
+1541702151-161	https://metahub.info/jwa-dinodex/	Postimetrodon	https://metahub.info/jwa-dinosaur/postimetrodon/		Defense Shattering Strike
+1541702180-213	https://metahub.info/jwa-dinodex/	Monolometrodon	https://metahub.info/jwa-dinosaur/monolometrodon/		Nullifying Strike
+1541702304-425	https://metahub.info/jwa-dinodex/	Ankylocodon	https://metahub.info/jwa-dinosaur/ankylocodon/			Immunity
+1541702245-327	https://metahub.info/jwa-dinodex/	Dsungaripterus	https://metahub.info/jwa-dinosaur/dsungariptus/			Swap In Ferocity
+1541702266-363	https://metahub.info/jwa-dinodex/	Diloracheirus	https://metahub.info/jwa-dinosaur/diloracheirus/		Distracting Impact
+1541702283-390	https://metahub.info/jwa-dinodex/	Brachiosaurus	https://metahub.info/jwa-dinosaur/brachiosaurus/		Rampage
+1541702279-383	https://metahub.info/jwa-dinodex/	Charlie	https://metahub.info/jwa-dinosaur/charlie/		Pounce
+1541702178-209	https://metahub.info/jwa-dinodex/	Monolophosaurus	https://metahub.info/jwa-dinosaur/monolophosaurus/		Nullifying Strike
+1541702224-293	https://metahub.info/jwa-dinodex/	Gigaspikasaur	https://metahub.info/jwa-dinosaur/gigaspikasaur/		Short Defense
+1541702107-85	https://metahub.info/jwa-dinodex/	Stegosaurus	https://metahub.info/jwa-dinosaur/stegosaurus/		Superiority Strike
+1541702287-395	https://metahub.info/jwa-dinodex/	Baryonyx Gen 2	https://metahub.info/jwa-dinosaur/baryonyx-gen-2/		Armor Piercing Strike
+1541702115-101	https://metahub.info/jwa-dinodex/	Spinotahraptor	https://metahub.info/jwa-dinosaur/spinotahraptor/		Gashing Wound
+1541702268-369	https://metahub.info/jwa-dinodex/	Dilophosaurus Gen 2	https://metahub.info/jwa-dinosaur/dilophosaurus-gen-2/			Swap In Distraction
+1541702090-61	https://metahub.info/jwa-dinodex/	Tragodistis	https://metahub.info/jwa-dinosaur/tragodistis/		Long Invicibility
+1541702086-54	https://metahub.info/jwa-dinodex/	Triceratops Gen 2	https://metahub.info/jwa-dinosaur/triceratops-gen2/		Low Stunning Strike
+1541702283-389	https://metahub.info/jwa-dinodex/	Brachiosaurus	https://metahub.info/jwa-dinosaur/brachiosaurus/		Bellow
+1541702235-309	https://metahub.info/jwa-dinodex/	Erlidominus	https://metahub.info/jwa-dinosaur/erlidominus/		Strike and Run
+1541702199-249	https://metahub.info/jwa-dinodex/	Kentrosaurus	https://metahub.info/jwa-dinosaur/kentrosaurus/		Thagomizer
+1541702222-287	https://metahub.info/jwa-dinodex/	Giraffatitan	https://metahub.info/jwa-dinosaur/giraffatitan/		Rampage
+1541702260-354	https://metahub.info/jwa-dinodex/	Dimetrodon Gen 2	https://metahub.info/jwa-dinosaur/dimetrodon-gen-2/			Immunity
+1541702201-253	https://metahub.info/jwa-dinodex/	Kaprosuchus	https://metahub.info/jwa-dinosaur/kaprosuchus/		Ferocity Impact
+1541702105-84	https://metahub.info/jwa-dinodex/	Stygimoloch	https://metahub.info/jwa-dinosaur/stygimoloch/		Minor Stunning Strike
+1541702241-317	https://metahub.info/jwa-dinodex/	Edmontosaurus	https://metahub.info/jwa-dinosaur/edmontosaurus/		Greater Stunning Impact
+1541702067-19	https://metahub.info/jwa-dinodex/	Utarinex	https://metahub.info/jwa-dinosaur/utarinex/		Minimal Stunning Strike
+1541702159-174	https://metahub.info/jwa-dinodex/	Ornithomimus	https://metahub.info/jwa-dinosaur/ornithomimus/		Evasive Strike
+1541702063-10	https://metahub.info/jwa-dinodex/	Velociraptor	https://metahub.info/jwa-dinosaur/velociraptor/		Pounce
+1541702151-159	https://metahub.info/jwa-dinodex/	Postimetrodon	https://metahub.info/jwa-dinosaur/postimetrodon/		Adrenaline Surge
+1541702247-328	https://metahub.info/jwa-dinodex/	Dracorex Gen 2	https://metahub.info/jwa-dinosaur/dracorex-gen-2/		Impact and Run
+1541702304-424	https://metahub.info/jwa-dinodex/	Ankylocodon	https://metahub.info/jwa-dinosaur/ankylocodon/		Short Defense
+1541702208-263	https://metahub.info/jwa-dinodex/	Indoraptor	https://metahub.info/jwa-dinosaur/indoraptor/		Defense Shattering Rampage
+1541702176-204	https://metahub.info/jwa-dinodex/	Monolophosaurus Gen 2	https://metahub.info/jwa-dinosaur/monolophosaurus-gen-2/		Distracting Impact
+1541702176-206	https://metahub.info/jwa-dinodex/	Monolophosaurus Gen 2	https://metahub.info/jwa-dinosaur/monolophosaurus-gen-2/			Swap In Distraction
+1541702117-105	https://metahub.info/jwa-dinodex/	Spinosaurus Gen 2	https://metahub.info/jwa-dinosaur/spinosaurus-gen2/		Strike
+1541702162-178	https://metahub.info/jwa-dinodex/	Ophiacodon	https://metahub.info/jwa-dinosaur/ophiacodon/		Armor Piercing Strike
+1541702285-394	https://metahub.info/jwa-dinodex/	Blue	https://metahub.info/jwa-dinosaur/blue/		Strike
+1541702226-297	https://metahub.info/jwa-dinodex/	Gallimimus	https://metahub.info/jwa-dinosaur/gallimimus/			Immunity
+1541702302-418	https://metahub.info/jwa-dinodex/	Ankylosaurus	https://metahub.info/jwa-dinosaur/ankylosaurus/		Instant Invincibility
+1541702306-430	https://metahub.info/jwa-dinodex/	Amargocephalus	https://metahub.info/jwa-dinosaur/amargocephalus-2/			Counter-Attack (0.5)
+1541702294-407	https://metahub.info/jwa-dinodex/	Arambourgiania	https://metahub.info/jwa-dinosaur/arambourgiania/		Superiority Strike
+1541702195-242	https://metahub.info/jwa-dinodex/	Koolasuchus Gen 2	https://metahub.info/jwa-dinosaur/koolasuchus-gen-2/		Distracting Strike
+1541702096-72	https://metahub.info/jwa-dinodex/	Tanycolagreus	https://metahub.info/jwa-dinosaur/tanycolagreus/		Nullifying Impact
+1541702180-212	https://metahub.info/jwa-dinodex/	Monolometrodon	https://metahub.info/jwa-dinosaur/monolometrodon/		Distracting Impact
+1541702191-234	https://metahub.info/jwa-dinodex/	Magnapyritor	https://metahub.info/jwa-dinosaur/magnapyritor/		Armor Piercing Strike
+1541702199-248	https://metahub.info/jwa-dinodex/	Kentrosaurus	https://metahub.info/jwa-dinosaur/kentrosaurus/		Superiority Strike
+1541702312-438	https://metahub.info/jwa-dinodex/	Allosaurus	https://metahub.info/jwa-dinosaur/allosaurus/		Armor Piercing Impact
+1541702155-166	https://metahub.info/jwa-dinodex/	Paramoloch	https://metahub.info/jwa-dinosaur/paramoloch/		Greater Stunning Strike
+1541702136-136	https://metahub.info/jwa-dinodex/	Pyrritator	https://metahub.info/jwa-dinosaur/pyrritator/		Armor Piercing Rampage
+1541702149-158	https://metahub.info/jwa-dinodex/	Postosuchus	https://metahub.info/jwa-dinosaur/postosuchus/		Ferocious Impact
+1541702080-39	https://metahub.info/jwa-dinodex/	Tuojiangosaurus	https://metahub.info/jwa-dinosaur/tuojiangosaurus/		Distracting Strike
+1541702132-127	https://metahub.info/jwa-dinodex/	Rajakylosaurus	https://metahub.info/jwa-dinosaur/rajakylosaurus/		Extended Critical Strike
+1541702151-160	https://metahub.info/jwa-dinodex/	Postimetrodon	https://metahub.info/jwa-dinosaur/postimetrodon/		Defense Shattering Impact
+1541702214-275	https://metahub.info/jwa-dinodex/	Hatzegopteryx	https://metahub.info/jwa-dinosaur/hatzegopteryx/			Swap In Defense
+1541702115-99	https://metahub.info/jwa-dinodex/	Spinotahraptor	https://metahub.info/jwa-dinosaur/spinotahraptor/		Critical Impact
+1541702189-228	https://metahub.info/jwa-dinodex/	Majundasuchus	https://metahub.info/jwa-dinosaur/majundasuchus/		Ferocious Strike
+1541702143-145	https://metahub.info/jwa-dinodex/	Purrusaurus	https://metahub.info/jwa-dinosaur/purrusaurus/		Ferocity Impact
+1541702078-38	https://metahub.info/jwa-dinodex/	Tuoramoloch	https://metahub.info/jwa-dinosaur/tuoramoloch/			Counter-Attack (0.5)
+1541702080-40	https://metahub.info/jwa-dinodex/	Tuojiangosaurus	https://metahub.info/jwa-dinosaur/tuojiangosaurus/		Superiority Strike
+1541702172-198	https://metahub.info/jwa-dinodex/	Monostegotops	https://metahub.info/jwa-dinosaur/monostegotops/		Stunning Impact
+1541702249-332	https://metahub.info/jwa-dinodex/	Dracorex	https://metahub.info/jwa-dinosaur/dracorex/		Instant Charge
+1541702180-210	https://metahub.info/jwa-dinodex/	Monolometrodon	https://metahub.info/jwa-dinosaur/monolometrodon/		Defense Shattering Impact
+1541702245-326	https://metahub.info/jwa-dinodex/	Dsungaripterus	https://metahub.info/jwa-dinosaur/dsungariptus/		Short Defense
+1541702294-405	https://metahub.info/jwa-dinodex/	Arambourgiania	https://metahub.info/jwa-dinosaur/arambourgiania/		Impact and Run
+1541702231-302	https://metahub.info/jwa-dinodex/	Erlikosaurus Gen 2	https://metahub.info/jwa-dinosaur/erlikosaurus-gen-2/		Rampage
+1541702180-211	https://metahub.info/jwa-dinodex/	Monolometrodon	https://metahub.info/jwa-dinosaur/monolometrodon/		Defense Shattering Strike
+1541702302-420	https://metahub.info/jwa-dinodex/	Ankylosaurus	https://metahub.info/jwa-dinosaur/ankylosaurus/		Vulnerability Strike
+1541702168-187	https://metahub.info/jwa-dinodex/	Nodopatotitan	https://metahub.info/jwa-dinosaur/nodopatotitan/		Short Defense
+1541702231-301	https://metahub.info/jwa-dinodex/	Erlikosaurus Gen 2	https://metahub.info/jwa-dinosaur/erlikosaurus-gen-2/		Minimal Speedup Strike
+1541702099-74	https://metahub.info/jwa-dinodex/	Suchotator	https://metahub.info/jwa-dinosaur/suchotator/		Lethal Wound
+1541702174-200	https://metahub.info/jwa-dinodex/	Monomimus	https://metahub.info/jwa-dinosaur/monomimus/		Evasive Stance
+1541702117-103	https://metahub.info/jwa-dinodex/	Spinosaurus Gen 2	https://metahub.info/jwa-dinosaur/spinosaurus-gen2/		Lethal Wound
+1541702078-36	https://metahub.info/jwa-dinodex/	Tuoramoloch	https://metahub.info/jwa-dinosaur/tuoramoloch/		Low Stunning Strike
+1541702071-25	https://metahub.info/jwa-dinodex/	Tyrannosaurus Rex Gen 2	https://metahub.info/jwa-dinosaur/tyrannosaurus-gen2/		Defense Shattering Strike
+1541702117-104	https://metahub.info/jwa-dinodex/	Spinosaurus Gen 2	https://metahub.info/jwa-dinosaur/spinosaurus-gen2/		Rampage
+1541702292-402	https://metahub.info/jwa-dinodex/	Argentinosaurus	https://metahub.info/jwa-dinosaur/argentinosaurus/		Decelerating Impact
+1541702193-240	https://metahub.info/jwa-dinodex/	Lythronax	https://metahub.info/jwa-dinosaur/lythronax/			Counter-attack (1)
+1541702076-31	https://metahub.info/jwa-dinodex/	Tupandactylus	https://metahub.info/jwa-dinosaur/tupandactylus/		Short Defense
+1541702298-412	https://metahub.info/jwa-dinodex/	Ankyntrosaurus	https://metahub.info/jwa-dinosaur/ankyntrosaurus/		Instant Invincibility
+1541702254-339	https://metahub.info/jwa-dinodex/	Diplocaulus Gen 2	https://metahub.info/jwa-dinosaur/diplocaulus-gen-2/		Crippling Distraction
+`;
+
+// replace misspelled dino names
+Abilities = Abilities.replace(/Purrusaurus/gm, "Purussaurus");
+
+// extract all stats to JSON object string
+Abilities= Abilities.replace(
+	/(.*?)\t(.*?)\t(.*?)\t(.*?)\t\t([^\t\n]*)\t?([^\t\n]*)\n/gm,
+	'{ "order": "$1", "name": "$3",\t\t\t\t\t\t\t"ability": "$5",\t"passive": "$6" },\n'
+);
+
+// wrap in square brackets
+Abilities = `[${Abilities}]`;
+
+// remove ending comma
+Abilities = Abilities.replace(
+	/,(\n+\]$)/gm,
+	'$1'
+);
+
+// parse into JSON object
+Abilities = JSON.parse(Abilities);
+
+// order the data so we can retrieve the abilities in order
+Abilities = _.sortBy(Abilities, [
+	function(o) { return o.order.replace(/-\d{1,3}/, ''); },
+	function(o) { return parseInt(o.order.replace(/\d{10}-/, '')); },
+]);
+
+// merge all records by dino name
+Abilities = _.reduce(Abilities, function(result, value, key) {
+	var dino = _.find(result, { name: value.name });
+	if (!dino)
+		result.push(dino = { name: value.name, abilities: [], passives: [] });
+
+	if (!_.isEmpty(value.ability))
+		(dino.abilities = (dino.abilities || [])).push(value.ability);
+
+	if (!_.isEmpty(value.passive))
+		(dino.passives = (dino.passives || [])).push(value.passive);
+
+	return result;
+}, []);
+
+
+
 // https://metahub.info/jurassic-world-alive/550/jwa-recipes-for-all-hybrids-what-dna-do-you-need/
+var Fusions = `
+`;
 
-var Moves = [
-	{ name: "Adrenaline Surge",			damage: 0, cooldown: 3, effect: "Act first. Cleanse. Increase damage 25% for 4 turns. Regenerate 25%." },
-	{ name: "Armor Piercing Impact",	damage: 1.5, cooldown: 2, effect: "Bypasses Thick Skin" },
-	{ name: "Armor Piercing Rampage",	damage: 2, cooldown: 1, effect: "Bypasses Thick Skin" },
-	{ name: "Armor Piercing Strike",	damage: 1, cooldown: 0, effect: "Bypasses Thick Skin" },
-	{ name: "Bleeding Bite",			damage: 0.5, cooldown: 2, effect: "Inflict 0.66x damage per turn for 3 turns" },
-	{ name: "Cleansing Impact",			damage: 1.5, cooldown: 2, effect: "Cleanse self." },
-	{ name: "Critical Impact",			damage: 1.5, cooldown: 2, effect: "Critical Chance +40%" },
-	{ name: "Decelerating Impact",		damage: 1.5, cooldown: 3, effect: "Target's speed is reduced 90% 2 turns" },
-	{ name: "Defensive Graze",			damage: 0.66, cooldown: 2, effect: "Shield 50% for 2 turns" },
-	{ name: "Distracting Strike",		damage: 1, cooldown: 2, effect: "Target damage reduced 50% 2 turns" },
-	{ name: "Exploit Wound",			damage: 0, cooldown: 2, effect: "Target is Vulnerable this turn and for the next 2 turns. DoT 1x for 2 turns" },
-	{ name: "Expose Weak Spot",			damage: 1, cooldown: 3, effect: "Then target is Vulnerable for this turn and next 3 turns." },
-	{ name: "Extended Critical Strike",	damage: 1, cooldown: 3, effect: "Critical Chance +60% for 3 turns" },
-	{ name: "Ferocious Strike",			damage: 1, cooldown: 3, effect: "Damage increased +50% for 3 turns" },
-	{ name: "Ferocity",					damage: 0, cooldown: 3, effect: "Damage increased +50% for 3 turns" },
-	{ name: "Greater Stunning Strike",	damage: 1, cooldown: 3, effect: "75% chance to stun this turn" },
-	{ name: "Impact",					damage: 1.5, cooldown: 2, effect: "None" },
-	{ name: "Instant Charge",			damage: 1, cooldown: 2, effect: "Act first. Guaranteed stun this turn" },
-	{ name: "Instant Cripple",			damage: 0, cooldown: 1, effect: "Act First. Target's damage reduced 90% this turn." },
-	{ name: "Instant Invincibility",	damage: 0, cooldown: 3, effect: "Act first. Shield 100% for 1 turn." },
-	{ name: "Instant Pinning Strike",	damage: 1, cooldown: 1, effect: "Act first. Cannot Swap this turn." },
-	{ name: "Lockdown Strike",			damage: 1, cooldown: 3, effect: "Cannot Swap 3 turns" },
-	{ name: "Minimal Stunning Strike",	damage: 1, cooldown: 0, effect: "10% Chance to stun this turn." },
-	{ name: "Minimal Wounding Strike",	damage: 1, cooldown: 0, effect: "DoT 0.1x over 2 turns" },
-	{ name: "Minor Wounding Strike",	damage: 1, cooldown: 0, effect: "Dot 0.15x over 2 turns" },
-	{ name: "Nullifying Strike",		damage: 1, cooldown: 0, effect: "Remove Positive Effects" },
-	{ name: "Pinning Strike",			damage: 1, cooldown: 0, effect: "Cannot Swap 1 turn" },
-	{ name: "Pounce",					damage: 2, cooldown: 1, effect: "None" },
-	{ name: "Short Defense",			damage: 1, cooldown: 2, effect: "50% shield for 2 turns" },
-	{ name: "Slowing Impact",			damage: 1.5, cooldown: 4, effect: "Decrease speed 50% for 3 turns" },
-	{ name: "Strike",					damage: 1, cooldown: 0, effect: "None" },
-	{ name: "Strike and Run",			damage: 1, cooldown: 1, effect: "Automatic Swap." },
-	{ name: "Stunning Impact",			damage: 1.5, cooldown: 2, effect: "33% chance to stun 2 turns" },
-	{ name: "Thagomizer",				damage: 1.5, cooldown: 3, effect: "Target's speed -50% for 3 turns" },
-	{ name: "Velocity Strike",			damage: 1, cooldown: 2, effect: "Increase speed 75% for 2 turns." },
-	{ name: "Wounding Strike",			damage: 1, cooldown: 4, effect: "Dot 0.5x per turn for 2 turns" },
-	// mine
-	{ name: "Impact and Run",			damage: 1.5, cooldown: 1, effect: "Automatic Swap", delay: 1 },
-	// { name: "Swap in Strike",		damage: 1, cooldown: 1, effect: "" },
-];
 
-var Dinos = [
-	// arena
-	{ name: "Allosaurus", 				rarity: "Common", 	health: 4200, 	damage: 1170, 	speed: 104, 	defense: "0%", 	quick: "Defense Shattering Strike", special: "Armor Piercing Impact", special2: "", special3: "" },
-	{ name: "Amargasaurus", 			rarity: "Rare", 	health: 4800, 	damage: 1053, 	speed: 103, 	defense: "0%", 	quick: "Pinning Strike", special: "Decelerating Impact", special2: "Slowing Impact", special3: "" },
-	{ name: "Ankylosaurus", 			rarity: "Epic", 	health: 4650, 	damage: 999, 	speed: 112, 	defense: "25%", quick: "Strike", special: "Short Defense", special2: "Instant Invincibility", special3: "" },
-	{ name: "Ankylosaurus Gen 2", 		rarity: "Common", 	health: 4200, 	damage: 981, 	speed: 112, 	defense: "25%", quick: "Vulnerability Strike", special: "Long Protection", special2: "", special3: "" },
-	{ name: "Apatosaurus", 				rarity: "Common", 	health: 6000, 	damage: 855, 	speed: 101, 	defense: "0%", 	quick: "Strike", special: "Decelerating Impact", special2: "", special3: "" },
-	{ name: "Dilophosaurus", 			rarity: "Rare", 	health: 2760, 	damage: 999, 	speed: 123, 	defense: "0%", 	quick: "Nullifying Strike", special: "Distracting Strike", special2: "Slowing Impact", special3: "" },
-	{ name: "Dilophosaurus Gen 2", 		rarity: "Common", 	health: 2880, 	damage: 990, 	speed: 121, 	defense: "0%", 	quick: "Nullifying Strike", special: "Distracting Impact", special2: "", special3: "" },
-	{ name: "Dimetrodon", 				rarity: "Rare", 	health: 3000, 	damage: 990, 	speed: 116, 	defense: "0%", 	quick: "Armor Piercing Strike", special: "Armor Piercing Impact", special2: "Critical Impact", special3: "" },
-	{ name: "Einiosaurus", 				rarity: "Common", 	health: 4020, 	damage: 1008, 	speed: 114, 	defense: "5%", 	quick: "Strike", special: "Stunning Impact", special2: "", special3: "" },
-	{ name: "Euoplocephalus", 			rarity: "Common", 	health: 4500, 	damage: 900, 	speed: 110, 	defense: "40%", quick: "Strike", special: "Impact", special2: "", special3: "" },
-	{ name: "Gorgosaurus", 				rarity: "Rare", 	health: 3330, 	damage: 1215, 	speed: 102, 	defense: "0%", 	quick: "Armor Piercing Strike", special: "Armor Piercing Impact", special2: "Ferocious Strike", special3: "" },
-	{ name: "Iguanodon", 				rarity: "Common", 	health: 4350, 	damage: 972, 	speed: 108, 	defense: "0%", 	quick: "Superiority Strike", special: "Greater Stunning Impact", special2: "", special3: "" },
-	{ name: "Kaprosuchus", 				rarity: "Rare", 	health: 2850, 	damage: 945, 	speed: 125, 	defense: "0%", 	quick: "Minor Wounding Strike", special: "Ferocious Strike", special2: "Adrenaline Surge", special3: "" },
-	{ name: "Kentrosaurus", 			rarity: "Epic", 	health: 3510, 	damage: 1053, 	speed: 110, 	defense: "0%", 	quick: "Strike", special: "Thagomizer", special2: "Instant Cripple", special3: "" },
-	{ name: "Majungasaurus", 			rarity: "Common", 	health: 2400, 	damage: 864, 	speed: 107, 	defense: "0%", 	quick: "Strike", special: "Instant Pinning Strike", special2: "", special3: "" },
-	{ name: "Megalosaurus", 			rarity: "Rare", 	health: 2130, 	damage: 864, 	speed: 102, 	defense: "0%", 	quick: "Pinning Strike", special: "Lockdown Strike", special2: "Bleeding Bite", special3: "" },
-	{ name: "Monolophosaurus Gen 2", 	rarity: "Common", 	health: 2850, 	damage: 990, 	speed: 126, 	defense: "0%", 	quick: "Nullifying Strike", special: "Distracting Impact", special2: "", special3: "" },
-	{ name: "Nodosaurus", 				rarity: "Rare", 	health: 4800, 	damage: 936, 	speed: 112, 	defense: "20%", quick: "Strike", special: "Armor Piercing Impact", special2: "Short Defense", special3: "" },
-	{ name: "Nundasuchus", 				rarity: "Common", 	health: 2970, 	damage: 990, 	speed: 127, 	defense: "0%", 	quick: "Strike", special: "Ferocious Strike", special2: "", special3: "" },
-	{ name: "Parasaurolophus", 			rarity: "Common", 	health: 3720, 	damage: 990, 	speed: 113, 	defense: "0%", 	quick: "Superiority Strike", special: "Impact and Run", special2: "", special3: "" },
-	{ name: "Postosuchus", 				rarity: "Rare", 	health: 3000, 	damage: 1008, 	speed: 126, 	defense: "0%", 	quick: "Defense Shattering Strike", special: "Ferocious Impact", special2: "Adrenaline Pulse", special3: "" },
-	{ name: "Pyroraptor", 				rarity: "Epic", 	health: 2310, 	damage: 1116, 	speed: 128, 	defense: "0%", 	quick: "Strike", special: "Pounce", special2: "Armor Piercing Impact", special3: "" },
-	{ name: "Rajasaurus", 				rarity: "Epic", 	health: 2310, 	damage: 864, 	speed: 103, 	defense: "0%", 	quick: "Pinning Strike", special: "Lockdown Strike", special2: "Exploit Wound", special3: "" },
-	{ name: "Sinoceratops", 			rarity: "Epic", 	health: 4050, 	damage: 999, 	speed: 113, 	defense: "15%", quick: "Strike", special: "Stunning Impact", special2: "Instant Charge", special3: "" },
-	{ name: "Spinosaurus", 				rarity: "Rare", 	health: 2700, 	damage: 1026, 	speed: 123, 	defense: "0%", 	quick: "Minimal Wounding Strike", special: "Wounding Strike", special2: "Expose Weak Spot", special3: "" },
-	{ name: "Stegosaurus", 				rarity: "Common", 	health: 3720, 	damage: 1116, 	speed: 116, 	defense: "15%",	quick: "Superiority Strike", special: "Thagomizer", special2: "", special3: "" },
-	{ name: "Suchomimus", 				rarity: "Common", 	health: 2760, 	damage: 1026, 	speed: 115, 	defense: "0%", 	quick: "Strike", special: "Gashing Wound", special2: "", special3: "" },
-	{ name: "Tanycolagreus", 			rarity: "Common", 	health: 2550, 	damage: 1143, 	speed: 128, 	defense: "0%", 	quick: "Armor Piercing Strike", special: "Nullifying Strike", special2: "", special3: "" },
-	{ name: "Tenontosaurus", 			rarity: "Rare", 	health: 3900, 	damage: 909, 	speed: 126, 	defense: "0%", 	quick: "Strike", special: "Greater Stunning Strike", special2: "Distracting Strike", special3: "" },
-	{ name: "Triceratops", 				rarity: "Rare", 	health: 4200, 	damage: 981, 	speed: 115, 	defense: "20%", quick: "Minor Stunning Strike", special: "Stunning Impact", special2: "Greater Stunning Strike", special3: "" },
-	{ name: "Triceratops Gen 2", 		rarity: "Common", 	health: 3960, 	damage: 1035, 	speed: 112, 	defense: "10%", quick: "Low Stunning Strike", special: "Rampage", special2: "", special3: "" },
-	{ name: "Tyrannosaurus Gen 2", 		rarity: "Rare", 	health: 3900, 	damage: 1206, 	speed: 103, 	defense: "0%", 	quick: "Armor Piercing Strike", special: "Armor Piercing Impact", special2: "Armor Piercing Rampage", special3: "" },
-	{ name: "Tyrannosaurus Rex", 		rarity: "Epic", 	health: 4050, 	damage: 1260, 	speed: 102, 	defense: "0%", 	quick: "Armor Piercing Strike", special: "Armor Piercing Impact", special2: "Armor Piercing Rampage", special3: "" },
-	{ name: "Utahraptor", 				rarity: "Rare", 	health: 2400, 	damage: 1044, 	speed: 128, 	defense: "0%", 	quick: "Strike", special: "Pounce", special2: "Critical Impact", special3: "" },
-	{ name: "Velociraptor", 			rarity: "Common", 	health: 1800, 	damage: 1035, 	speed: 132, 	defense: "0%", 	quick: "Strike", special: "Pounce", special2: "", special3: "" },
-	// non-arena
-	{ name: "Edmontosaurus", 			rarity: "Rare", 	health: 4350, 	damage: 900, 	speed: 123, 	defense: "0%", 	quick: "Superiority Strike", special: "Greater Stunning Strike", special2: "Strike and Run", special3: "" },
-	{ name: "Lythronax", 				rarity: "Common", 	health: 2340, 	damage: 900, 	speed: 102, 	defense: "0%", 	quick: "Strike", special: "Lockdown Strike", special2: "", special3: "" },
-	{ name: "Ophiacodon", 				rarity: "Common", 	health: 3000, 	damage: 916, 	speed: 108, 	defense: "0%", 	quick: "Strike", special: "Extended Critical Strike", special2: "", special3: "" },
-	{ name: "Proceratosaurus", 			rarity: "Rare", 	health: 2850, 	damage: 900, 	speed: 124, 	defense: "0%", 	quick: "Nullifying Strike", special: "Distracting Impact", special2: "Slowing Impact", special3: "" },
-	{ name: "Tarbosaurus", 				rarity: "Common", 	health: 3950, 	damage: 1170, 	speed: 104, 	defense: "0%", 	quick: "Defense Shattering Strike", special: "Armor Piercing Impact", special2: "", special3: "" },
-	{ name: "Tuojiangosaurus", 			rarity: "Rare", 	health: null, 	damage: null,	speed: null,	defense: "", 	quick: "Strike", special: "Thagomizer", special2: "Distracting Strike", special3: "" },
-	{ name: "Wuerhosaurus", 			rarity: "Rare", 	health: 3960, 	damage: 1115, 	speed: 115, 	defense: "10%", quick: "Strike", special: "Thagomizer", special2: "Instant Cripple", special3: "" },
-	// hybrid
-	{ name: "Einiasuchus", 				rarity: "Rare", 	health: 3900, 	damage: 908, 	speed: 115, 	defense: "10%", quick: "Minimal Stunning Strike", special: "Stunning Impact", special2: "Cleansing Impact", special3: "Ferocious Strike" },
-	// mine
-	{ name: "Dracorex Gen 2",			rarity: "Common", 	health: null, 	damage: null, 	speed: 119, 	defense: "0%", 	quick: "Low Stunning Strike", special: "Impact and Run", special2: "", special3: "" },
-	{ name: "Purussaurus Gen 2",		rarity: "Common", 	health: null, 	damage: null, 	speed: 111, 	defense: "10%", quick: "Vulnerability Strike", special: "Lockdown Impact", special2: "", special3: "" },
-	{ name: "Hatzegopteryx",			rarity: "Common", 	health: null, 	damage: null, 	speed: 114, 	defense: "0%", quick: "Superiority Strike", special: "Impact and Run", special2: "", special3: "" },
-	{ name: "Deinocheirus", 			rarity: "Common",	health: null, 	damage: null, 	speed: 130, 	defense: "0%", 	quick: "Minimal Speedup Strike", special: "Rampage", special2: "", special3: "" },
-	{ name: "Dimetrodon Gen 2",			rarity: "Common", 	health: null, 	damage: null, 	speed: 112, 	defense: "0%", 	quick: "Defense Shattering Strike", special: "Armor Piercing Rampage", special2: "", special3: "" },
-	{ name: "Diplocaulus", 				rarity: "Common", 	health: null, 	damage: null, 	speed: 124, 	defense: "0%", 	quick: "Nullifying Strike", special: "Distracting Impact", special2: "", special3: "" },
-	{ name: "Sarcosuchus", 				rarity: "Common", 	health: null, 	damage: null, 	speed: 110, 	defense: "10%",	quick: "Minimal Wounding Strike", special: "Lockdown Strike", special2: "", special3: "" },
-];
-
-var Levels = [
-	{ name: "Allosaurus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1396, atk: 512 },
-			{ hp: 1466, atk: 538 },
-			{ hp: 1539, atk: 564 },
-		],
-	},
-	{ name: "Amargasaurus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 2036, atk: 400 },
-			{ hp: 2137, atk: 420 },
-			{ hp: 2244, atk: 441 },
-		],
-	},
-	{ name: "Ankylosaurus",
-	},
-	{ name: "Ankylosaurus Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1436, atk: 294 },
-			{ hp: 1508, atk: 308 },
-			{ hp: 1583, atk: 324 },
-		],
-	},
-	{ name: "Apatosaurus",
-	},
-	{ name: "Dilophosaurus",
-	},
-	{ name: "Dilophosaurus Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 838, atk: 379 },
-			{ hp: 880, atk: 398 },
-		],
-	},
-	{ name: "Dimetrodon",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1303, atk: 311 },
-			{ hp: 1368, atk: 326 },
-			{ hp: 1436, atk: 342 },
-		],
-	},
-	{ name: "Edmontosaurus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1855, atk: 359 },
-			{ hp: 1947, atk: 376 },
-		],
-	},
-	{ name: "Einiasuchus",
-	},
-	{ name: "Einiosaurus",
-	},
-	{ name: "Euoplocephalus",
-		levels: [
-			{ hp: 1329, atk: null },
-			{ hp: 1396, atk: 295 },
-			{ hp: 1466, atk: 310 },
-			{ hp: 1539, atk: 325 },
-			{ hp: 1616, atk: 341 },
-		],
-	},
-	{ name: "Gorgosaurus",
-	},
-	{ name: "Iguanodon",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1563, atk: 277 },
-			{ hp: 1641, atk: 291 },
-			{ hp: 1723, atk: 306 },
-		],
-	},
-	{ name: "Kaprosuchus",
-	},
-	{ name: "Kentrosaurus",
-	},
-	{ name: "Lythronax",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1334, atk: 305 },
-			{ hp: 1400, atk: 320 },
-			{ hp: 1470, atk: 336 },
-		],
-	},
-	{ name: "Majungasaurus",
-		levels: [
-			{ hp: 1081, atk: 254 },
-			{ hp: 1135, atk: 267 },
-		],
-	},
-	{ name: "Megalosaurus",
-	},
-	{ name: "Monolophosaurus Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 745, atk: 373 },
-			{ hp: 782, atk: 391 },
-			{ hp: 821, atk: 411 },
-			{ hp: 862, atk: 431 },
-			{ hp: 905, atk: 453 },
-		],
-	},
-	{ name: "Nodosaurus",
-	},
-	{ name: "Nundasuchus",
-	},
-	{ name: "Ophiacodon",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1368, atk: 326 },
-			{ hp: 1436, atk: 342 },
-			{ hp: 1508, atk: 359 },
-		],
-	},
-	{ name: "Parasaurolophus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1582, atk: 276 },
-			{ hp: 1661, atk: 290 },
-			{ hp: 1744, atk: 305 },
-		],
-	},
-	{ name: "Postosuchus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1357, atk: 528 },
-			{ hp: 1425, atk: 554 },
-		],
-	},
-	{ name: "Proceratosaurus",
-	},
-	{ name: "Pyroraptor",
-	},
-	{ name: "Rajasaurus",
-	},
-	{ name: "Sinoceratops",
-	},
-	{ name: "Spinosaurus",
-	},
-	{ name: "Stegosaurus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1385, atk: 394 },
-			{ hp: 1454, atk: 413 },
-			{ hp: 1527, atk: 434 },
-		],
-	},
-	{ name: "Suchomimus",
-		levels: [
-			{ hp: 1072, atk: 207 },
-			{ hp: 1126, atk: 218 },
-			{ hp: 1182, atk: 228 },
-		],
-	},
-	{ name: "Tanycolagreus",
-	},
-	{ name: "Tarbosaurus",
-		levels: [
-			{ hp: 1196, atk: 473 },
-			{ hp: 1256, atk: 497 },
-		],
-	},
-	{ name: "Tenontosaurus",
-	},
-	{ name: "Triceratops",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1583, atk: 468 },
-			{ hp: 1662, atk: 491 },
-		],
-	},
-	{ name: "Triceratops Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1117, atk: 357 },
-			{ hp: 1173, atk: 375 },
-		],
-	},
-	{ name: "Tuojiangosaurus",
-	},
-	{ name: "Tyrannosaurus Rex",
-	},
-	{ name: "Tyrannosaurus Gen 2",
-	},
-	{ name: "Utahraptor",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 950, atk: 509 },
-			{ hp: 998, atk: 535 },
-		],
-	},
-	{ name: "Velociraptor",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 635, atk: 430 },
-			{ hp: 667, atk: 452 },
-		],
-	},
-	{ name: "Wuerhosaurus",
-	},
-	{ name: "Dracorex Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1222, atk: 359 },
-			{ hp: 1282, atk: 376 },
-		],
-	},
-	{ name: "Purussaurus Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1436, atk: 342 },
-			{ hp: 1508, atk: 359 },
-			{ hp: 1583, atk: 377 },
-		],
-	},
-	{ name: "Hatzegopteryx",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: null, atk: null },
-			{ hp: 1368, atk: 303 },
-			{ hp: 1436, atk: 318 },
-			{ hp: 1508, atk: 334 },
-		],
-	},
-	{ name: "Deinocheirus",
-		levels: [
-			{ hp: 886, atk: 376 },
-			{ hp: 931, atk: 394 },
-			{ hp: 977, atk: 414 },
-			{ hp: 1026, atk: 435 },
-		],
-	},
-	{ name: "Dimetrodon Gen 2",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1303, atk: 311 },
-			{ hp: 1368, atk: 326 },
-			{ hp: 1436, atk: 342 },
-		],
-	},
-	{ name: "Diplocaulus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 931, atk: 342 },
-			{ hp: 977, atk: 359 },
-		],
-	},
-	{ name: "Sarcosuchus",
-		levels: [
-			{ hp: null, atk: null },
-			{ hp: 1303, atk: 311 },
-			{ hp: 1368, atk: 326 },
-		],
-	},
-];
 
 var Collection = [
-	{ name: "Allosaurus", 				level: 4,	team: false },
-	{ name: "Amargasaurus", 			level: 7,	team: false },
+	{ name: "Allosaurus", 				level: 5,	team: false },
+	{ name: "Amargasaurus", 			level: 7,	team: true },
 	{ name: "Ankylocodon", 				level: 0,	team: false },
 	{ name: "Ankylosaurus", 			level: 0,	team: false },
 	{ name: "Ankylosaurus Gen 2", 		level: 5,	team: false },
@@ -419,264 +921,193 @@ var Collection = [
 	{ name: "Dilophosaurus", 			level: 0,	team: false },
 	{ name: "Dilophosaurus Gen 2", 		level: 2,	team: false },
 	{ name: "Dimetrodon", 				level: 0,	team: false },
-	{ name: "Dimetrodon Gen 2", 		level: 4,	team: false },
+	{ name: "Dimetrodon Gen 2", 		level: 5,	team: false },
 	{ name: "Diplocaulus",		 		level: 4,	team: false },
+	{ name: "Diplocaulus Gen 2", 		level: 7,	team: false },
 	{ name: "Dracorex Gen 2",			level: 4,	team: false },
-	{ name: "Edmontosaurus", 			level: 7,	team: false },
+	{ name: "Edmontosaurus", 			level: 7,	team: true },
 	{ name: "Einiasuchus", 				level: 0,	team: false },
-	{ name: "Einiosaurus", 				level: 0,	team: false },
-	{ name: "Euoplocephalus", 			level: 4,	team: false },
+	{ name: "Einiosaurus", 				level: 1,	team: false },
+	{ name: "Euoplocephalus", 			level: 4,	team: true },
 	{ name: "Gorgosaurus", 				level: 0,	team: false },
-	{ name: "Hatzegopteryx",			level: 4,	team: false },
-	{ name: "Iguanodon", 				level: 4,	team: false },
-	{ name: "Kaprosuchus", 				level: 0,	team: false },
+	{ name: "Hatzegopteryx",			level: 6,	team: false },
+	{ name: "Iguanodon", 				level: 5,	team: false },
+	{ name: "Kaprosuchus", 				level: 7,	team: false },
 	{ name: "Kentrosaurus", 			level: 0,	team: false },
-	{ name: "Lythronax", 				level: 6,	team: false },
-	{ name: "Majungasaurus", 			level: 1,	team: false },
-	{ name: "Megalosaurus", 			level: 0,	team: false },
+	{ name: "Koolasuchus Gen 2", 		level: 8,	team: false },
+	{ name: "Lythronax", 				level: 7,	team: true },
+	{ name: "Majungasaurus", 			level: 2,	team: false },
+	{ name: "Megalosaurus", 			level: 7,	team: false },
 	{ name: "Monolophosaurus Gen 2", 	level: 5,	team: false },
-	{ name: "Nodosaurus", 				level: 0,	team: false },
-	{ name: "Nundasuchus", 				level: 0,	team: false },
-	{ name: "Ophiacodon", 				level: 5,	team: false },
-	{ name: "Parasaurolophus", 			level: 5,	team: false },
+	{ name: "Nodosaurus", 				level: 6,	team: false },
+	{ name: "Nundasuchus", 				level: 1,	team: false },
+	{ name: "Ophiacodon", 				level: 5,	team: true },
+	{ name: "Parasaurolophus", 			level: 6,	team: false },
 	{ name: "Postosuchus", 				level: 6,	team: false },
-	{ name: "Proceratosaurus", 			level: 0,	team: false },
-	{ name: "Purussaurus Gen 2",		level: 6,	team: false },
+	{ name: "Proceratosaurus", 			level: 7,	team: false },
+	{ name: "Purussaurus Gen 2",		level: 7,	team: true },
 	{ name: "Pyroraptor", 				level: 0,	team: false },
 	{ name: "Rajasaurus", 				level: 0,	team: false },
 	{ name: "Sarcosuchus",		 		level: 2,	team: false },
 	{ name: "Sinoceratops", 			level: 0,	team: false },
 	{ name: "Spinosaurus", 				level: 6,	team: false },
-	{ name: "Stegosaurus", 				level: 6,	team: false },
-	{ name: "Suchomimus", 				level: 3,	team: false },
+	{ name: "Stegosaurus", 				level: 8,	team: true },
+	{ name: "Suchomimus", 				level: 4,	team: false },
 	{ name: "Tanycolagreus", 			level: 0,	team: false },
-	{ name: "Tarbosaurus", 				level: 1,	team: false },
+	{ name: "Tarbosaurus", 				level: 2,	team: false },
 	{ name: "Tenontosaurus", 			level: 0,	team: false },
-	{ name: "Triceratops", 				level: 6,	team: false },
-	{ name: "Triceratops Gen 2", 		level: 2,	team: false },
-	{ name: "Tuojiangosaurus", 			level: 6,	team: false },
+	{ name: "Triceratops", 				level: 6,	team: true },
+	{ name: "Triceratops Gen 2", 		level: 4,	team: false },
+	{ name: "Tuojiangosaurus", 			level: 7,	team: false },
+	{ name: "Tupandactylus", 			level: 6,	team: false },
 	{ name: "Tyrannosaurus Rex", 		level: 0,	team: false },
 	{ name: "Tyrannosaurus Rex Gen 2", 	level: 0,	team: false },
 	{ name: "Utahraptor", 				level: 7,	team: false },
 	{ name: "Velociraptor", 			level: 4,	team: false },
-	{ name: "Wuerhosaurus", 			level: 6,	team: false },
+	{ name: "Wuerhosaurus", 			level: 8,	team: false },
 ];
+
 
 
 var Images = [
-	{ name: "Allosaurus", 				img: "https://metahub.info/wp-content/uploads/2018/05/Allosaurus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Allosauru.png" },
-	{ name: "Amargasaurus", 			img: "https://metahub.info/wp-content/uploads/2018/05/Amargasaurus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Amargasau.png" },
-	{ name: "Ankylosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Ankylosau.png" },
-	{ name: "Ankylosaurus Gen 2", 		img: "https://metahub.info/wp-content/uploads/2018/05/Ankylosaurus-Gen-2.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Ankylosau2.png" },
-	{ name: "Apatosaurus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Apatosaur.png" },
-	{ name: "Dilophosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Dilophosa.png" },
-	{ name: "Dilophosaurus Gen 2", 		img: "https://metahub.info/wp-content/uploads/2018/05/Dilophosaurus-Gen-2.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Dilophosa2.png" },
-	{ name: "Dimetrodon", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Dimetrodo.png" },
-	{ name: "Edmontosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Edmontosa.png" },
-	{ name: "Einiasuchus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Einiasuch.png" },
-	{ name: "Einiosaurus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Einiosaur.png" },
-	{ name: "Euoplocephalus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Euoplocep.png" },
-	{ name: "Gorgosaurus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Gorgosaur.png" },
-	{ name: "Iguanodon", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Iguanodon.png" },
-	{ name: "Kaprosuchus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Kaprosuch.png" },
-	{ name: "Kentrosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Kentrosau.png" },
-	{ name: "Lythronax", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Lythronax.png" },
-	{ name: "Majungasaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Majungasa.png" },
-	{ name: "Megalosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Megalosau.png" },
-	{ name: "Monolophosaurus Gen 2", 	img: "https://metahub.info/wp-content/uploads/2018/05/Monolophosaurus-Gen-2.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Monolopho2.png" },
-	{ name: "Nodosaurus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Nodosauru.png" },
-	{ name: "Nundasuchus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Nundasuch.png" },
-	{ name: "Ophiacodon", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Ophiacodo.png" },
-	{ name: "Parasaurolophus", 			img: "https://metahub.info/wp-content/uploads/2018/05/Parasaurolophus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Parasauro.png" },
-	{ name: "Postosuchus", 				img: "https://metahub.info/wp-content/uploads/2018/05/Postosuchus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Postosuch.png" },
-	{ name: "Proceratosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Procerato.png" },
-	{ name: "Pyroraptor", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Pyrorapto.png" },
-	{ name: "Rajasaurus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Rajasauru.png" },
-	{ name: "Sinoceratops", 			img: "" },
-	{ name: "Spinosaurus", 				img: "" },
-	{ name: "Stegosaurus", 				img: "https://metahub.info/wp-content/uploads/2018/05/Stegosaurus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Stegosaur.png" },
-	{ name: "Suchomimus", 				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Suchominu.png" },
-	{ name: "Tanycolagreus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tanycolag.png" },
-	{ name: "Tarbosaurus", 				img: "https://metahub.info/wp-content/uploads/2018/05/Tarbosaurus.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tarbosaur.png" },
-	{ name: "Tenontosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tenontosa.png" },
-	{ name: "Triceratops", 				img: "https://metahub.info/wp-content/uploads/2018/05/Triceratops.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tricerato.png" },
-	{ name: "Triceratops Gen 2", 		img: "https://metahub.info/wp-content/uploads/2018/05/Triceratops-Gen-2.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tricerato2.png" },
-	{ name: "Tuojiangosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tuojiango.png" },
-	{ name: "Tyrannosaurus Rex", 		img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tyrannosa.png" },
-	{ name: "Tyrannosaurus Gen 2", 		img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Tyrannosa2.png" },
-	{ name: "Utahraptor", 				img: "https://metahub.info/wp-content/uploads/2018/05/Utahraptor.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Utahrapto.png" },
-	{ name: "Velociraptor", 			img: "https://metahub.info/wp-content/uploads/2018/05/Velociraptor.png" },//"https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Velocirap.png" },
-	{ name: "Wuerhosaurus", 			img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Wuerhosau.png" },
-	{ name: "Dracorex Gen 2",			img: "https://metahub.info/wp-content/uploads/2018/06/Dracorex2.png" },
-	{ name: "Purussaurus Gen 2",		img: "https://metahub.info/wp-content/uploads/2018/06/JWA_Profile_Purussaurus_GEN2_result.jpg" },
-	{ name: "Hatzegopteryx",			img: "https://metahub.info/wp-content/uploads/2018/09/Hatzegop.png" },
-	{ name: "Deinocheirus",				img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Deinocheirus.png" },
-	{ name: "Dimetrodon Gen 2", 		img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Dimetrodo2.png" },
-	{ name: "Diplocaulus",		 		img: "https://github.com/apavlinovic/jurassic-world-alive-assets/raw/master/Sprite/Img_Diplocaulus.png" },
-	{ name: "Sarcosuchus",		 		img: "https://metahub.info/wp-content/uploads/2018/06/JWA_Profile_Sarcosuchus_result.jpg" },
-];
-// https://github.com/Incien104/Julive/tree/master/assets/dinoCards
-// https://github.com/Incien104/Julive/tree/master/1.2.22/JW%20Alive_com.ludia.jw2/assets/Database/Assets/Data/CreaturesAttributesData
-// https://drive.google.com/drive/folders/1Uwav8lnULEih-jCIK8EaE5Nueui8Lq35
-
-// src: "Img_Allopachy.png" },
-// src: "Img_Amargado.png" },
-// src: "Img_Amargoce.png" },
-// src: "Img_Ankyntros.png" },
-// src: "Img_Argentino.png" },
-// src: "Img_Corner.png" },
-// src: "Img_Diplocaulus2.png" },
-// src: "Img_Erlidominus.png" },
-// src: "Img_Erlikosaurus.png" },
-// src: "Img_Erlikosaurus2.png" },
-// src: "Img_Gorgosuch.png" },
-// src: "Img_Indominus.png" },
-// src: "Img_Koolasuchus.png" },
-// src: "Img_Koolasuchus2.png" },
-// src: "Img_Majundasuch.png" },
-// src: "Img_Megalosuc.png" },
-// src: "Img_Monolopho.png" },
-// src: "Img_Monostego.png" },
-// src: "Img_Nodopatos.png" },
-// src: "Img_Pachyrhin.png" },
-// src: "Img_Paramargo.png" },
-// src: "Img_Postimetro.png" },
-// src: "Img_Rajakylo.png" },
-// src: "Img_Secodonto.png" },
-// src: "Img_Spinosaur.png" },
-// src: "Img_Spinotah.png" },
-// src: "Img_Stegocera.png" },
-// src: "Img_Trykosaur.png" },
-// src: "Img_Utahrhino.png" },
-// src: "Img_ouranosau.png" },
-
-var Tiers = [
-	{ name: "Alankylosaurus",			tier: "Apex" },
-	{ name: "Alanqa",					tier: "Survivor" },
-	{ name: "Allosaurus",				tier: "Hatchling" },
-	{ name: "Allosinosaurus",			tier: "Apex" },
-	{ name: "Amargasaurus",				tier: "Hatchling" },
-	{ name: "Amargocephalus",			tier: "Specialist" },
-	{ name: "Ankylocodon",				tier: "Specialist" },
-	{ name: "Ankylosaurus",				tier: "Specialist" },
-	{ name: "Ankylosaurus Gen 2",		tier: "Specialist" },
-	{ name: "Ankyntrosaurus",			tier: "Alpha" },
-	{ name: "Apatosaurus",				tier: "Hatchling" },
-	{ name: "Arambourgiania",			tier: "Survivor" },
-	{ name: "Argentinosaurus",			tier: "Survivor" },
-	{ name: "Baryonyx",					tier: "Survivor" },
-	{ name: "Baryonyx Gen 2",			tier: "Hatchling" },
-	{ name: "Blue",						tier: "Alpha" },
-	{ name: "Brachiosaurus",			tier: "Alpha" },
-	{ name: "Carnotaurus",				tier: "Hatchling" },
-	{ name: "Charlie",					tier: "Survivor" },
-	{ name: "Concavenator",				tier: "Specialist" },
-	{ name: "Deinocheirus",				tier: "Hatchling" },
-	{ name: "Delta",					tier: "Survivor" },
-	{ name: "Dilophosaurus",			tier: "Specialist" },
-	{ name: "Dilophosaurus Gen 2",		tier: "Hatchling" },
-	{ name: "Diloracheirus",			tier: "Apex" },
-	{ name: "Diloranosaurus",			tier: "Alpha" },
-	{ name: "Dimetrodon",				tier: "Survivor" },
-	{ name: "Dimetrodon Gen 2",			tier: "Specialist" },
-	{ name: "Diorajasaur",				tier: "Alpha" },
-	{ name: "Diplocaulus",				tier: "Hatchling" },
-	{ name: "Diplocaulus Gen 2",		tier: "Specialist" },
-	{ name: "Diplotator",				tier: "Survivor" },
-	{ name: "Dracorex",					tier: "Hatchling" },
-	{ name: "Dracorex Gen 2",			tier: "Carcass" },
-	{ name: "Dsungaripterus",			tier: "Specialist" },
-	{ name: "Echo",						tier: "Specialist" },
-	{ name: "Edmontosaurus",			tier: "Specialist" },
-	{ name: "Einiasuchus",				tier: "Survivor" },
-	{ name: "Einiosaurus",				tier: "Hatchling" },
-	{ name: "Erlidominus",				tier: "Apex" },
-	{ name: "Erlikosaurus",				tier: "Alpha" },
-	{ name: "Erlikosaurus Gen 2",		tier: "Survivor" },
-	{ name: "Euoplocephalus",			tier: "Hatchling" },
-	{ name: "Gallimimus",				tier: "Specialist" },
-	{ name: "Gigaspikasaur",			tier: "Survivor" },
-	{ name: "Giraffatitan",				tier: "Survivor" },
-	{ name: "Gorgosaurus",				tier: "Specialist" },
-	{ name: "Gorgosuchus",				tier: "Survivor" },
-	{ name: "Gryposuchus",				tier: "Specialist" },
-	{ name: "Hatzegopteryx",			tier: "Hatchling" },
-	{ name: "Iguanodon",				tier: "Hatchling" },
-	{ name: "Indominus Rex",			tier: "Apex" },
-	{ name: "Indoraptor",				tier: "Apex" },
-	{ name: "Irritator",				tier: "Specialist" },
-	{ name: "Irritator Gen 2",			tier: "Carcass" },
-	{ name: "Kaprosuchus",				tier: "Survivor" },
-	{ name: "Kentrosaurus",				tier: "Survivor" },
-	{ name: "Koolasuchus",				tier: "Survivor" },
-	{ name: "Koolasuchus Gen 2",		tier: "Specialist" },
-	{ name: "Lythronax",				tier: "Hatchling" },
-	{ name: "Magnapyritor",				tier: "Apex" },
-	{ name: "Majundasuchus",			tier: "Survivor" },
-	{ name: "Majungasaurus",			tier: "Hatchling" },
-	{ name: "Megalosaurus",				tier: "Hatchling" },
-	{ name: "Megalosuchus",				tier: "Alpha" },
-	{ name: "Monolometrodon",			tier: "Specialist" },
-	{ name: "Monolophosaurus",			tier: "Specialist" },
-	{ name: "Monolophosaurus Gen 2",	tier: "Hatchling" },
-	{ name: "Monomimus",				tier: "Apex" },
-	{ name: "Monostegotops",			tier: "Alpha" },
-	{ name: "Nodopatosaurus",			tier: "Survivor" },
-	{ name: "Nodopatotitan",			tier: "Survivor" },
-	{ name: "Nodosaurus",				tier: "Specialist" },
-	{ name: "Nundasuchus",				tier: "Specialist" },
-	{ name: "Ophiacodon",				tier: "Hatchling" },
-	{ name: "Ornithomimus",				tier: "Survivor" },
-	{ name: "Ouranosaurus",				tier: "Alpha" },
-	{ name: "Paramoloch",				tier: "Alpha" },
-	{ name: "Parasaurolophus",			tier: "Hatchling" },
-	{ name: "Postimetrodon",			tier: "Alpha" },
-	{ name: "Postosuchus",				tier: "Survivor" },
-	{ name: "Proceratosaurus",			tier: "Specialist" },
-	{ name: "Pteranodon",				tier: "Survivor" },
-	{ name: "Purrusaurus",				tier: "Specialist" },
-	{ name: "Purrusaurus Gen 2",		tier: "Hatchling" },
-	{ name: "Pyroraptor",				tier: "Survivor" },
-	{ name: "Pyrritator",				tier: "Apex" },
-	{ name: "Quetzalcoatlus",			tier: "Hatchling" },
-	{ name: "Rajakylosaurus",			tier: "Apex" },
-	{ name: "Rajasaurus",				tier: "Alpha" },
-	{ name: "Sarcorixis",				tier: "Survivor" },
-	{ name: "Sarcosuchus",				tier: "Hatchling" },
-	{ name: "Secodontosaurus",			tier: "Specialist" },
-	{ name: "Sinoceratops",				tier: "Survivor" },
-	{ name: "Spinosaurus",				tier: "Survivor" },
-	{ name: "Spinosaurus Gen 2",		tier: "Survivor" },
-	{ name: "Spinotahraptor",			tier: "Alpha" },
-	{ name: "Spinotasuchus",			tier: "Apex" },
-	{ name: "Stegoceratops",			tier: "Alpha" },
-	{ name: "Stegodeus",				tier: "Apex" },
-	{ name: "Stegosaurus",				tier: "Hatchling" },
-	{ name: "Stygimoloch",				tier: "Survivor" },
-	{ name: "Stygimoloch Gen 2",		tier: "Carcass" },
-	{ name: "Suchomimus",				tier: "Specialist" },
-	{ name: "Suchotator",				tier: "Alpha" },
-	{ name: "Tanycolagreus",			tier: "Alpha" },
-	{ name: "Tarbosaurus",				tier: "Hatchling" },
-	{ name: "Tenontosaurus",			tier: "Specialist" },
-	{ name: "Tragodistis",				tier: "Apex" },
-	{ name: "Triceratops",				tier: "Specialist" },
-	{ name: "Triceratops Gen 2",		tier: "Hatchling" },
-	{ name: "Trykosaurus",				tier: "Apex" },
-	{ name: "Tryostronix",				tier: "Apex" },
-	{ name: "Tuojiangosaurus",			tier: "Specialist" },
-	{ name: "Tuoramoloch",				tier: "Alpha" },
-	{ name: "Tupandactylus",			tier: "Specialist" },
-	{ name: "Tyrannosaurus Rex",		tier: "Alpha" },
-	{ name: "Tyrannosaurus Rex Gen 2",	tier: "Hatchling" },
-	{ name: "Utahraptor",				tier: "Survivor" },
-	{ name: "Utarinex",					tier: "Apex" },
-	{ name: "Utasinoraptor",			tier: "Alpha" },
-	{ name: "Velociraptor",				tier: "Specialist" },
-	{ name: "Wuerhosaurus",				tier: "Specialist" },
+	{ name: "Alankylosaurus",			img: "" },
+	{ name: "Alanqa",					img: "" },
+	{ name: "Allosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Allosaurus.jpg" },
+	{ name: "Allosinosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Allosinosaurus.jpg" },
+	{ name: "Amargasaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Amargasaurus.jpg" },
+	{ name: "Amargocephalus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Amargocephalus.jpg" },
+	{ name: "Ankylocodon",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ankylocodon.jpg" },
+	{ name: "Ankylosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ankylosaurus.jpg" },
+	{ name: "Ankylosaurus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ankylosaurus_Gen_2.jpg" },
+	{ name: "Ankyntrosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ankyntrosaurus.jpg" },
+	{ name: "Apatosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Apatosaurus.jpg" },
+	{ name: "Arambourgiania",			img: "" },
+	{ name: "Argentinosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Argentinosaurus.jpg" },
+	{ name: "Baryonyx",					img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Baryonyx.jpg" },
+	{ name: "Baryonyx Gen 2",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Baryonyx_Gen_2.jpg" },
+	{ name: "Blue",						img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Blue.jpg" },
+	{ name: "Brachiosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Brachiosaurus.jpg" },
+	{ name: "Carnotaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Carnotaur.jpg" },
+	{ name: "Charlie",					img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Charlie.jpg" },
+	{ name: "Concavenator",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Concavenator.jpg" },
+	{ name: "Deinocheirus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Deinocheirus.jpg" },
+	{ name: "Delta",					img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Delta.jpg" },
+	{ name: "Dilophosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dilophosaurus.jpg" },
+	{ name: "Dilophosaurus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dilophosaurus_Gen_2.jpg" },
+	{ name: "Diloracheirus",			img: "" },
+	{ name: "Diloranosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Diloranosaurus.jpg" },
+	{ name: "Dimetrodon",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dimetrodon.jpg" },
+	{ name: "Dimetrodon Gen 2",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dimetrodon_Gen_2.jpg" },
+	{ name: "Diorajasaur",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Diorajasaur.jpg" },
+	{ name: "Diplocaulus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Diplocaulus.jpg" },
+	{ name: "Diplocaulus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Diplocaulus_Gen_2.jpg" },
+	{ name: "Diplotator",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Diplotator.jpg" },
+	{ name: "Dracorex",					img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dracorex.jpg" },
+	{ name: "Dracorex Gen 2",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Dracorex_Gen_2.jpg" },
+	{ name: "Dsungaripterus",			img: "" },
+	{ name: "Echo",						img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Echo.jpg" },
+	{ name: "Edmontosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Edmontosaurus.jpg" },
+	{ name: "Einiasuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Einiasuchus.jpg" },
+	{ name: "Einiosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Einiosaurus.jpg" },
+	{ name: "Erlidominus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Erlidominus.jpg" },
+	{ name: "Erlikosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Erlikosaurus.jpg" },
+	{ name: "Erlikosaurus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Erlikosaurus_Gen_2.jpg" },
+	{ name: "Euoplocephalus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Euoplocephalus.jpg" },
+	{ name: "Gallimimus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Gallimimus.jpg" },
+	{ name: "Gigaspikasaur",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Gigaspikasaur.jpg" },
+	{ name: "Giraffatitan",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Giraffatitan.jpg" },
+	{ name: "Gorgosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Gorgosaurus.jpg" },
+	{ name: "Gorgosuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Gorgosuchus.jpg" },
+	{ name: "Gryposuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Gryposuchus.jpg" },
+	{ name: "Hatzegopteryx",			img: "" },
+	{ name: "Iguanodon",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Iguanodon.jpg" },
+	{ name: "Indominus Rex",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Indominus_Rex.jpg" },
+	{ name: "Indoraptor",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Indoraptor.jpg" },
+	{ name: "Irritator",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Irritator.jpg" },
+	{ name: "Irritator Gen 2",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Irritator_Gen_2.jpg" },
+	{ name: "Kaprosuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Kaprosuchus.jpg" },
+	{ name: "Kentrosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Kentrosaurus.jpg" },
+	{ name: "Koolasuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Koolasuchus.jpg" },
+	{ name: "Koolasuchus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Koolasuchus_Gen_2.jpg" },
+	{ name: "Lythronax",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Lythronax.jpg" },
+	{ name: "Magnapyritor",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Magnapyritor.jpg" },
+	{ name: "Majundasuchus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Majundasuchus.jpg" },
+	{ name: "Majungasaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Majungasaurus.jpg" },
+	{ name: "Megalosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Megalosaurus.jpg" },
+	{ name: "Megalosuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Megalosuchus.jpg" },
+	{ name: "Monolometrodon",			img: "" },
+	{ name: "Monolophosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Monolophosaurus.jpg" },
+	{ name: "Monolophosaurus Gen 2",	img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Monolophosaurus_Gen_2.jpg" },
+	{ name: "Monomimus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Monomimus.jpg" },
+	{ name: "Monostegotops",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Monostegotops.jpg" },
+	{ name: "Nodopatosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Nodopatosaurus.jpg" },
+	{ name: "Nodopatotitan",			img: "" },
+	{ name: "Nodosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Nodosaurus.jpg" },
+	{ name: "Nundasuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Nundasuchus.jpg" },
+	{ name: "Ophiacodon",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ophiacodon.jpg" },
+	{ name: "Ornithomimus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ornithomimus.jpg" },
+	{ name: "Ouranosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Ouranosaurus.jpg" },
+	{ name: "Paramoloch",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Paramoloch.jpg" },
+	{ name: "Parasaurolophus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Parasaurolophus.jpg" },
+	{ name: "Postimetrodon",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Postimetrodon.jpg" },
+	{ name: "Postosuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Postosuchus.jpg" },
+	{ name: "Proceratosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Proceratosaurus.jpg" },
+	{ name: "Pteranodon",				img: "" },
+	{ name: "Purussaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Purussaurus.jpg" },
+	{ name: "Purussaurus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Purussaurus_Gen_2.jpg" },
+	{ name: "Pyroraptor",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Pyroraptor.jpg" },
+	{ name: "Pyrritator",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Pyrritator.jpg" },
+	{ name: "Quetzalcoatlus",			img: "" },
+	{ name: "Rajakylosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Rajakylosaurus.jpg" },
+	{ name: "Rajasaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Rajasaurus.jpg" },
+	{ name: "Sarcorixis",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Sarcorixis.jpg" },
+	{ name: "Sarcosuchus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Sarcosuchus.jpg" },
+	{ name: "Secodontosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Secodontosaurus.jpg" },
+	{ name: "Sinoceratops",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Sinoceratops.jpg" },
+	{ name: "Spinosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Spinosaurus.jpg" },
+	{ name: "Spinosaurus Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Spinosaurus_Gen_2.jpg" },
+	{ name: "Spinotahraptor",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Spinotahraptor.jpg" },
+	{ name: "Spinotasuchus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Spinotasuchus.jpg" },
+	{ name: "Stegoceratops",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Stegoceratops.jpg" },
+	{ name: "Stegodeus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Stegodeus.jpg" },
+	{ name: "Stegosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Stegosaurus.jpg" },
+	{ name: "Stygimoloch",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Stygimoloch.jpg" },
+	{ name: "Stygimoloch Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Stygimoloch_Gen_2.jpg" },
+	{ name: "Suchomimus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Suchominus.jpg" },
+	{ name: "Suchotator",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Suchotator.jpg" },
+	{ name: "Tanycolagreus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tanycolagreus.jpg" },
+	{ name: "Tarbosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tarbosaurus.jpg" },
+	{ name: "Tenontosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tenontosaurus.jpg" },
+	{ name: "Tragodistis",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tragodistis.jpg" },
+	{ name: "Triceratops",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Triceratops.jpg" },
+	{ name: "Triceratops Gen 2",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Triceratops_Gen_2.jpg" },
+	{ name: "Trykosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Trykosaurus.jpg" },
+	{ name: "Tryostronix",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tryostronix.jpg" },
+	{ name: "Tuojiangosaurus",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tuojiangosaurus.jpg" },
+	{ name: "Tuoramoloch",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tuoramoloch.jpg" },
+	{ name: "Tupandactylus",			img: "" },
+	{ name: "Tyrannosaurus Rex",		img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tyrannosaurus_Rex.jpg" },
+	{ name: "Tyrannosaurus Rex Gen 2",	img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Tyrannosaurus_Rex_Gen_2.jpg" },
+	{ name: "Utahraptor",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Utahraptor.jpg" },
+	{ name: "Utarinex",					img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Utarhinex.jpg" },
+	{ name: "Utasinoraptor",			img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Utahsinoraptor.jpg" },
+	{ name: "Velociraptor",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Velociraptor.jpg" },
+	{ name: "Wuerhosaurus",				img: "https://raw.githubusercontent.com/Incien104/Julive/master/assets/dinoCards/JWA_Profile_Wuerhosaurus.jpg" },
 ];
 
-// depletes some DNA from sources and adds to result, but might not create result
-var Fusions = [
-	{ result: "Ankylocodon", source1: "Ophiacodon", level1: 5, source2: "Ankylosaurus Gen 2", level2: 5 },
-];
+
+
+// A Tank:					Triceratops, Einosaurus, Euoplocephalus etc (Good at taking damage and Stun)
+// Anti Tank:				Gorgosaurus, Dimetrodon, Tanycolagreus etc (Anything that bites away at armor)
+// Glass Cannon:			Velociraptor, Suchomimus, Nundasuchas etc (A lot of damage and fast, but very little HP)
+// Lucky/Annoying:			Parasaurolophus, Edmontosaurus, Koolasuchus etc (Relying on stun% chances and being fast)
+// Speed Controllers:		Stegosaurus, Apatosaurus etc (Have moves that can slow down enemies, good for Lucky dinos and Glass Canon)
+// General all Rounders:	Deinocheirus, Purrusaurus etc (Just good all round to have, can’t go wrong with having them)
+
+// dodge
+// evasive Strike
+// Nullifying Strike
+// Impact
+// crits
+
+// Don’t miss the special event incubators

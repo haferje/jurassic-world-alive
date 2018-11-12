@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Page Title</title>
+		<title>Jurassic World Alive</title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/js/sortable.min.js"></script>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/sortable/0.8.0/css/sortable-theme-bootstrap.min.css" rel="stylesheet" />
 		<script src="data.js"></script>
-		<script src="data2.js"></script>
 	</head>
 	<body>
+
+		<style>
+			body { font-family: Verdana; font-size: 12px; }
+			.team { background-color: lightgrey; }
+
+			.unique		 { background-color: #baffc9; }	/* green */
+			.legendary	 { background-color: #ffb3ba; }	/* red */
+			.epic		 { background-color: #ffffba; }	/* yellow */
+			.rare		 { background-color: #bae1ff; }	/* blue */
+			.common		 { }							/* grey */
+
+			.apex		{ color: #bae1ff; }
+			.alpha		{ color: #baffc9; }
+			.survivor	{ color: #ffffba; }
+			.specialist	{ color: #ffdfba; }
+			.hatchling	{ color: #ffb3ba; }
+			.carcass	{ }
+
+			.image, .abilities, .passives {
+				padding-top: 0px !important;
+				padding-bottom: 0px !important;
+				font-size: 0.7em;
+				line-height: 1.4em;
+			}
+		</style>
+
+		Rarity: unique > legendary > epic > rare > common<br/>
+		Tier: apex > alpha > survivor > specialist > hatchling > carcass<br/>
+		Stats: Strength > Armored, Armored > Speed, Speed > Strength<br/>
 
 		<table id="team" class="sortable-theme-bootstrap" data-sortable>
 			<thead>
 				<tr>
 					<th data-sortable-type="numeric">#</th>
-					<th data-sortable="false">Img</th>
+					<th data-sortable-type="alpha">Img</th>
 					<th data-sortable-type="alpha">Name</th>
 					<th data-sortable-type="numeric">Level</th>
 					<th data-sortable-type="alpha">Rarity</th>
 					<th data-sortable-type="alpha">Tier</th>
+					<th data-sortable-type="numeric">Health</th>
+					<th data-sortable-type="numeric">Damage</th>
 					<th data-sortable-type="numeric">Speed</th>
+					<th data-sortable-type="numeric">Armor</th>
+					<th data-sortable-type="numeric">Critical</th>
+					<th data-sortable="false">Abilities</th>
+					<th data-sortable="false">Passive</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,8 +62,33 @@
 		</table>
 
 		<script>
-			// TODO:
-			// column to sort by team, then collection by level then name
+			/* TODO:
+			#	column to sort by team, then collection by level then name
+			#	health/damage need calculated at level
+			#	colors for rarity
+			#		common (grey)
+			#		rare (blue)
+			#		epic (yellow)
+			#		legendary (red)
+			#		unique (green)
+			#	max/current health/damage
+			#		health and damage formula: ROUNDUP( StatLevel26 / (1,05 ^ (26 - CurrentLevel) ); 0)
+			#		var healthCalc = Math.ceil(dex.health / Math.pow(1.05, 26 - dex.level));
+			#		var damageCalc = Math.ceil(dex.damage / Math.pow(1.05, 26 - dex.level));
+			#	updated images
+			#	colors for tier
+			#		apex
+			#		alpha
+			#		survivor
+			#		specialist
+			#		hatchling
+			#		carcass
+				one column sort by name, one column sort by dex
+				mouseover tooltip for attack descriptions
+				checkbox to show all/collection
+				fusions
+				header row for min/max values
+			 */
 
 			var $table = null;
 
@@ -37,31 +96,80 @@
 
 				$table = $("table#team");
 
+				// sort by: on team, in collection, level, name
+				sorter = (dino) => [~~!dino.team, ~~!(dino.level > 0), 99-dino.level, dino.name];
+
 				_(Collection)
-					.filter(dino => dino.level > 0)
-					.map(dino => {
-						var d = _.find(Dinos, { name: dino.name });
-						var i = _.find(Images, { name: dino.name });
-						var t = _.find(Tiers, { name: dino.name });
-						return _.extend(dino, d, i, t);
+					.filter(own => own.level > 0)
+					// .orderBy(dino => sorter(dino), ['desc', 'desc', 'desc', 'asc'])
+					.orderBy(sorter)
+					.map(own => {
+						var stats		= _.find(Dinos, { name: own.name });
+						var abilities	= _.find(Abilities, { name: own.name });
+						var image		= _.find(Images, { name: own.name });
+
+						var levelStats = {
+							levelHealth: Math.ceil(stats.health / Math.pow(1.05, 26 - own.level)),
+							levelDamage: Math.ceil(stats.damage / Math.pow(1.05, 26 - own.level)),
+						};
+
+						return _.extend(own, stats, abilities, image, levelStats);
 					})
-					.each((d, idx) => {
+					.each((dino, idx) => {
+						// var stringSort = `${~~dino.team}-${~~(dino.level>0)}-${dino.level}-${dino.name}`;
+						var teamSort = sorter(dino).join('');
+
 						var template = `
 							<tr>
-								<td>${idx}</td>
-								<td><img src="${d.img}" height="50" /></td>
-								<td>${d.name}</td>
-								<td>${d.level}</td>
-								<td>${d.rarity}</td>
-								<td>${d.tier || ''}</td>
-								<td>${d.speed}</td>
+								<td>
+									${idx+1}
+								</td>
+								<td class="image" data-value="${teamSort}">
+									<img src="${dino.img}" height="50" />
+								</td>
+								<td class="${dino.team && "team"}">
+									${dino.name}
+								</td>
+								<td>
+									${dino.level}
+								</td>
+								<td class="${dino.rarity.toLowerCase()}">
+									${dino.rarity}
+								</td>
+								<td class="${dino.tier.toLowerCase()}">
+									${dino.tier}
+								</td>
+								<td>
+									${dino.levelHealth}
+								</td>
+								<td>
+									${dino.levelDamage}
+								</td>
+								<td>
+									${dino.speed}
+								</td>
+								<td>
+									${dino.armor}
+								</td>
+								<td>
+									${dino.critical}
+								</td>
+								<td class="abilities">
+									${_.map(dino.abilities, ability => `${ability}<br/>`).join('')}
+								</td>
+								<td class="passives">
+									${_.reduce(dino.passives, (sum, passive) => sum + `<div>${passive}</div>`, '')}
+								</td>
 							</tr>
 						`;
+
 						$table.find("tbody").append(template);
 					});
 
 				Sortable.init();
-				// Sortable.initTable($table.get(0));
+
+// _.findIndex(x, null/undefined) gives first index
+// `${_.map()}` includes separating commas -- ${["<div>asdf</div>","<div>asdf</div>","<div>asdf</div>"]} -- because it does a toString() on the array
 
 			});
 		</script>

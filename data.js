@@ -904,6 +904,166 @@ Abilities = _.reduce(Abilities, function(result, value, key) {
 
 
 
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities
+// set Page Load Delay to 5000
+// scroll the page after it loads so the images lazy load in so it will scrape the scr correctly
+var XXXXX = `
+1542060979-887	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Bellow	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/69/Icon_Speed_DeBuff_2.png/revision/latest/scale-to-width-down/60?cb=20180626144219	0	2	0	Reduce Target Speed 50% for 2 turns
+1542060979-918	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Cripple	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	0	1	0	Act first
+1542060979-940	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swoop	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/80/Icon_Attack_Wound.png/revision/latest/scale-to-width-down/60?cb=20180617153706	0	0	0	Auto-Swap to next Creature
+1542060979-867	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Minimal Speedup Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/65/Icon_Attack_Speed.png/revision/latest/scale-to-width-down/60?cb=20180617152800	1x	0	0	Increase speed 10% for 3 turns
+1542060979-873	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Superiority Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/73/Attack_Basic_Speed_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152753	1x	0	0	Cleanse Self
+1542060979-878	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Pulse	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b4/Icon_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180626144100	0	3	0	Regenerate 25% HP
+1542060979-892	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Cloak	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/8e/Icon_Cloak.png/revision/latest/scale-to-width-down/60?cb=20180617153711	0	3	0	Next attack will deal 2x damage
+1542060979-962	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Wound	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a6/Icon_Swap_In_Wound.png/revision/latest/scale-to-width-down/60?cb=20180919161608	0	0	0	Unable to swap for 2 Turns
+1542060979-863	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/82/Icon_Bypass_Shield_2.png/revision/latest/scale-to-width-down/60?cb=20180617153709	1x	0	0	Bypass Armor
+1542060979-862	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/82/Icon_Bypass_Shield_2.png/revision/latest/scale-to-width-down/60?cb=20180617153709	1x	0	0	Destroy Shields
+1542060979-939	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swoop	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/80/Icon_Attack_Wound.png/revision/latest/scale-to-width-down/60?cb=20180617153706	0	0	0	DoT 0.2x of target's max HP for 3 turns
+1542060979-932	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Ready to Crush	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e1/Icon_Attack_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617152755	0	3	0	Increase Damage by 50% for next 3 turns
+1542060979-901	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Distracting Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	2x	2	0	Target's damage is reduced by 50% for 2 turns
+1542060979-877	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Pulse	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b4/Icon_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180626144100	0	3	0	Cleanse
+1542060979-883	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Armor Piercing Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/4/4b/Icon_Bypass_Armor_2.png/revision/latest/scale-to-width-down/60?cb=20180617153707	1.5x	2	0	Bypass armor
+1542060979-864	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Evasive Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/60/Icon_Attack_Evasive_Strike.png/revision/latest/scale-to-width-down/60?cb=20180913124532	1x	0	0	Gain 50% chance to Dodge direct damage for 1 turn.
+1542060979-866	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Low Stunning Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Stun.png/revision/latest/scale-to-width-down/60?cb=20180617152801	1x	0	0	20% Chance to stun for 1 turn
+1542060979-910	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Greater Stunning Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/ed/Icon_Stun_1.png/revision/latest/scale-to-width-down/60?cb=20180626144243	1.5	3	1	75% Chance to stun 1 turn
+1542060979-925	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Long Invincibility	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/be/Icon_Invincibility_2.png/revision/latest/scale-to-width-down/60?cb=20180626144114	0	4	0	Shield 100% for 2 turns
+1542060979-934	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Short Defense	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a6/Icon_Shield_3.png/revision/latest/scale-to-width-down/60?cb=20180617154438	1x	2	0	50% shield for 2 turns
+1542060979-917	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Charge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/c/cd/Icon_Stun_3.png/revision/latest/scale-to-width-down/60?cb=20180626144258	1x	2	1	Guaranteed stun 1 turn
+1542060979-936	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Strengthening Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e1/Icon_Attack_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617152755	1x	3	0	Increase damage 50% for 2 turns
+1542060979-886	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Bellow	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/69/Icon_Speed_DeBuff_2.png/revision/latest/scale-to-width-down/60?cb=20180626144219	0	2	0	Shield 50% for 1 turn
+1542060979-951	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Ferocity	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/4/49/Icon_Swap_Ferocity.png/revision/latest/scale-to-width-down/60?cb=20180919161134	0	0	0	Increase Damage by 50% for 2 turns after swapping in
+1542060979-870	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Nullifying Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/68/Icon_Attack_Scrub.png/revision/latest/scale-to-width-down/60?cb=20180617152758	1x	0	0	Remove Positive Effects
+1542060979-865	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Lesser Wounding Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/80/Icon_Attack_Wound.png/revision/latest/scale-to-width-down/60?cb=20180617153706	1x	0	0	DoT 0.15x damage for 2 turnsTBC
+1542060979-875	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Vulnerability Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/76/Icon_Attack_Vulnerablility.png/revision/latest/scale-to-width-down/60?cb=20180617153705	1x	0	0	Target is Vulnerable for 1 turn
+1542060979-931	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Rampage and Run	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Swap.png/revision/latest/scale-to-width-down/60?cb=20180617152801	2x	1	1	Automatic Swap
+1542060979-927	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Maiming Wound	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/80/Icon_Attack_Wound.png/revision/latest/scale-to-width-down/60?cb=20180617153706	1x	1	0	DoT 0.4x of target's max HP for 2 turns
+1542060979-880	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Surge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b7/Icon_Attack_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180617152757	0	3	0	Cleanse
+1542060979-902	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Distracting Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	1x	2	0	Target's damage is reduced by 50% for 2 turns
+1542060979-906	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Extended Critical Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/7c/Icon_Critical_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617153711	1x	3	0	Critical Chance +60% for 3 turns
+1542060979-941	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Thagomizer	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/69/Icon_Speed_DeBuff_2.png/revision/latest/scale-to-width-down/60?cb=20180626144219	1.5x	3	0	Target's speed -50% for 3 turns
+1542060979-948	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Defense	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/5/5c/Icon_Swap_In_Defense.png/revision/latest/scale-to-width-down/60?cb=20180919160813	0	0	0	Unable to swap for 2 Turns
+1542060979-947	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Defense	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/5/5c/Icon_Swap_In_Defense.png/revision/latest/scale-to-width-down/60?cb=20180919160813	0	0	0	Gain 50% Shield for 2 turns after swapping in
+1542060979-885	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Bellow	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/69/Icon_Speed_DeBuff_2.png/revision/latest/scale-to-width-down/60?cb=20180626144219	0	2	0	Act First
+1542060979-907	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Ferocious Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e1/Icon_Attack_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617152755	1.5x	3	0	Damage increased +50% for 3 turns
+1542060979-895	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Decelerating Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/8d/Icon_Speed_DeBuff_4.png/revision/latest/scale-to-width-down/60?cb=20180626144231	1.5x	1	0	Target’s speed is reduced 50% for 2 turns
+1542060979-959	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Stun	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/3e/Icon_Swap_In_Stun.png/revision/latest/scale-to-width-down/60?cb=20180919161737	0	0	0	Gain 66% chance to stun for 1 turn after swapping in
+1542060979-945	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Counter-Attack	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/2/20/Icon_Counter_attack.png/revision/latest/scale-to-width-down/60?cb=20180919160255	Varies	0	0	Deal ? damage after receiving but surviving damage
+1542060979-949	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Distraction	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a7/Icon_Swap_In_Distraction.png/revision/latest/scale-to-width-down/60?cb=20180919161013	0	0	0	Reduce oponent's damage by 50% for 1 turn after swapping in
+1542060979-955	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Slow	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/4/48/Icon_Swap_In_Slow.png/revision/latest/scale-to-width-down/60?cb=20180919161343	0	0	0	Reduce oponent's speed by 50% for 1 turn after swapping in
+1542060979-922	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Lethal Wound	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d2/Icon_Attack_Wound_Special_2.png/revision/latest/scale-to-width-down/60?cb=20180617153707	1x	2	0	DoT 0.33x of target's max HP per turn for 3 turns
+1542060979-872	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/30/Icon_Attack.png/revision/latest/scale-to-width-down/60?cb=20180617151453	1x	0	0	No special effect
+1542060979-954	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Invincibility	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/5/5c/Icon_Swap_In_Defense.png/revision/latest/scale-to-width-down/60?cb=20180919160813	0	0	0	Unable to swap for 2 Turns
+1542060979-937	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Strike and Run	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Swap.png/revision/latest/scale-to-width-down/60?cb=20180617152801	1x	0	0	Automatic Swap
+1542060979-896	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/82/Icon_Bypass_Shield_2.png/revision/latest/scale-to-width-down/60?cb=20180617153709	1.5x	2	0	Destroy Shields
+1542060979-911	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Greater Stunning Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/c/cd/Icon_Stun_3.png/revision/latest/scale-to-width-down/60?cb=20180626144258	2x	3	1	75% Chance to stun 1 turn
+1542060979-958	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/61/Icon_Swap_In_Strike.png/revision/latest/scale-to-width-down/60?cb=20180919161454	0	0	0	Unable to swap for 2 Turns
+1542060979-944	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Wounding Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/3d/Icon_Attack_Wound_Special_1.png/revision/latest/scale-to-width-down/60?cb=20180617153706	1x	1	0	DoT 0.15x of target's max HP for 2 turns
+1542060979-928	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Nullifying Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/1/1e/Icon_Scrub_2.png/revision/latest/scale-to-width-down/60?cb=20180626144140	1.5x	2	0	Remove positive effects
+1542060979-924	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Lockdown Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/2/21/Icon_Swap_Prevention.png/revision/latest/scale-to-width-down/60?cb=20180626144312	1x	1	0	Cannot swap for 2 turns
+1542060979-868	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Minimal Stunning Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Stun.png/revision/latest/scale-to-width-down/60?cb=20180617152801	1x	0	0	10% Chance to stun for 1 turn
+1542060979-960	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Stun	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/3e/Icon_Swap_In_Stun.png/revision/latest/scale-to-width-down/60?cb=20180919161737	0	0	0	Unable to swap for 2 turns
+1542060979-956	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Slow	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/4/48/Icon_Swap_In_Slow.png/revision/latest/scale-to-width-down/60?cb=20180919161343	0	0	0	Unable to swap for 1 turn
+1542060979-893	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Critical Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/7c/Icon_Critical_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617153711	1.5	2	0	Chance of Critical attack increased by 40%
+1542060979-926	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Long Protection	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a6/Icon_Shield_3.png/revision/latest/scale-to-width-down/60?cb=20180617154438	1x	4	0	50% Defense for 4 turns
+1542060979-952	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Ferocity	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/4/49/Icon_Swap_Ferocity.png/revision/latest/scale-to-width-down/60?cb=20180919161134	0	0	0	Unable to swap for 2 Turns
+1542060979-908	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Ferocious Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e1/Icon_Attack_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617152755	1x	3	0	Damage increased +50% for 3 turns
+1542060979-903	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Evasive Stance	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/32/Icon_Attack_Evasive_Stance.png/revision/latest/scale-to-width-down/60?cb=20180913124409	0	4	0	Act first.
+1542060979-946	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Immunity	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d7/Icon_Debuff_Immune.png/revision/latest/scale-to-width-down/60?cb=20180919160545	0	0	0	All negative effects are deflected
+1542060979-897	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/82/Icon_Bypass_Shield_2.png/revision/latest/scale-to-width-down/60?cb=20180617153709	1.5x	2	0	Bypass Armor
+1542060979-861	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Armor Piercing Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/8d/Icon_Bypass-Armor.png/revision/latest/scale-to-width-down/60?cb=20180617153710	1x	0	0	Bypass armor
+1542060979-942	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Wounding Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d2/Icon_Attack_Wound_Special_2.png/revision/latest/scale-to-width-down/60?cb=20180617153707	1.5x	1	0	DoT 0.15x of target's max HP for 2 turns
+1542060979-938	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Stunning Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/5/53/Icon_Stun.png/revision/latest/scale-to-width-down/60?cb=20180617154226	1.5x	2	1	33% Chance to stun opponent for 1 turn
+1542060979-874	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Superiority Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/73/Attack_Basic_Speed_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152753	1x	0	0	Target: Reduce Speed 33% 1 turn
+1542060979-933	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Ready to Crush	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e1/Icon_Attack_Buff.png/revision/latest/scale-to-width-down/60?cb=20180617152755	0	3	0	Increase Critical Chance by 30% for next 3 turns
+1542060979-957	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/61/Icon_Swap_In_Strike.png/revision/latest/scale-to-width-down/60?cb=20180919161454	0	0	0	Deal 1x damage after swapping in
+1542060979-912	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Greater Stunning Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/ed/Icon_Stun_1.png/revision/latest/scale-to-width-down/60?cb=20180626144243	1x	3	2	75% Chance to stun 1 turn
+1542060979-935	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Slowing Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/69/Icon_Speed_DeBuff_2.png/revision/latest/scale-to-width-down/60?cb=20180626144219	1.5	4	0	Target's speed is reduced 50% for 3 turns
+1542060979-891	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Cloak	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/8e/Icon_Cloak.png/revision/latest/scale-to-width-down/60?cb=20180617153711	0	3	0	Gain 50% chance of dodge for 2 turns
+1542060979-890	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Cloak	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/8e/Icon_Cloak.png/revision/latest/scale-to-width-down/60?cb=20180617153711	0	3	0	Act First
+1542060979-905	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Expose Weak Spot	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/9/90/Icon_Vulnerability.png/revision/latest/scale-to-width-down/60?cb=20180626144337	1x	3	0	Target vulnerable this turn and next 3 turns
+1542060979-921	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Invincibility	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/be/Icon_Invincibility_2.png/revision/latest/scale-to-width-down/60?cb=20180626144114	0	3	1	Shield 100% for 1 turn
+1542060979-961	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Wound	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a6/Icon_Swap_In_Wound.png/revision/latest/scale-to-width-down/60?cb=20180919161608	0	0	0	DoT 0.25x target's max HP for 2 turns after swapping in
+1542060979-943	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Wounding Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d2/Icon_Attack_Wound_Special_2.png/revision/latest/scale-to-width-down/60?cb=20180617153707	2x	1	0	DoT 0.15x of target's max HP for 2 turns
+1542060979-882	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Surge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b7/Icon_Attack_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180617152757	0	3	0	Regenerate 25% HP
+1542060979-894	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Debilitating Distraction	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	1x	3	1	Target's damage reduced 75% 2 turns
+1542060979-898	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e8/Icon_Bypass_Shield_4.png/revision/latest/scale-to-width-down/60?cb=20180617153710	2x	1	1	Destroy Shields
+1542060979-889	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Armor Piercing Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/63/Icon_Bypass_Armor_4.png/revision/latest/scale-to-width-down/60?cb=20180617153708	2x	1	1	Bypass Armor
+1542060979-916	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Charge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/c/cd/Icon_Stun_3.png/revision/latest/scale-to-width-down/60?cb=20180626144258	1x	2	1	Act first
+1542060979-871	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Pinning Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/7/77/Icon_Attack_Swap_Prevented.png/revision/latest/scale-to-width-down/60?cb=20180617153704	1x	0	0	Cannot swap for 1 turn
+1542060979-876	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Pulse	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b4/Icon_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180626144100	0	3	0	Act First
+1542060979-881	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Surge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b7/Icon_Attack_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180617152757	0	3	0	Increase damage to 1.25x for 4 turns
+1542060979-920	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Invincibility	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/be/Icon_Invincibility_2.png/revision/latest/scale-to-width-down/60?cb=20180626144114	0	3	1	Act first
+1542060979-884	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Armor Piercing Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/6/63/Icon_Bypass_Armor_4.png/revision/latest/scale-to-width-down/60?cb=20180617153708	2x	1	1	Bypass Armor
+1542060979-899	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Defense Shattering Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/e8/Icon_Bypass_Shield_4.png/revision/latest/scale-to-width-down/60?cb=20180617153710	2x	1	1	Bypass Armor
+1542060979-879	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Adrenaline Surge	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/b/b7/Icon_Attack_Heal_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180617152757	0	3	0	Act First
+1542060979-930	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Rampage	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d1/Icon_Attack_Special_3.png/revision/latest/scale-to-width-down/60?cb=20180617152800	2x	1	0	No special effect
+1542060979-913	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/e/ed/Icon_Attack_Special_1.png/revision/latest/scale-to-width-down/60?cb=20180617152759	1.5x	2	0	No special effect
+1542060979-869	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Minor Stunning Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Stun.png/revision/latest/scale-to-width-down/60?cb=20180617152801	1x	0	0	15% Chance to stun for 1 turn
+1542060979-914	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Impact and Run	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a2/Icon_Attack_Swap.png/revision/latest/scale-to-width-down/60?cb=20180617152801	1.5	1	1	Automatic Swap
+1542060979-900	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Distracting Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	1.5x	2	0	Target's damage is reduced by 50% for 2 turns
+1542060979-888	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Cleansing Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/f/f7/Icon_Attack_Impact_Cleanse.png/revision/latest/scale-to-width-down/60?cb=20180617152758	1.5x	2	0	Cleanse
+1542060979-904	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Evasive Stance	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/3/32/Icon_Attack_Evasive_Stance.png/revision/latest/scale-to-width-down/60?cb=20180913124409	0	4	0	Gain 50% chance to Dodge direct damage for 3 turn.
+1542060979-919	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Instant Cripple	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/ae/Icon_Attack_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617152756	0	1	0	Target’s damage is reduced 90% for 1 turn
+1542060979-923	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Lockdown Impact	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/2/21/Icon_Swap_Prevention.png/revision/latest/scale-to-width-down/60?cb=20180626144312	1.5x	1	0	Cannot swap for 2 turns
+1542060979-953	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Invincibility	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/5/5c/Icon_Swap_In_Defense.png/revision/latest/scale-to-width-down/60?cb=20180919160813	0	0	0	Become Invincible for 1 Turn after swapping in
+1542060979-950	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Swap In Distraction	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/a/a7/Icon_Swap_In_Distraction.png/revision/latest/scale-to-width-down/60?cb=20180919161013	0	0	0	Unable to swap for 1 turn
+1542060979-909	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Gashing Wound	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/8/80/Icon_Attack_Wound.png/revision/latest/scale-to-width-down/60?cb=20180617153706	1x	1	0	DoT 0.3x of target's max HP for 2 turns
+1542060979-915	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Impairing Strike	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d0/Icon_Critical_Debuff.png/revision/latest/scale-to-width-down/60?cb=20180617153712	1x	2	0	No Critical Chance for 3 turns
+1542060979-929	http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities	Pounce	https://vignette.wikia.nocookie.net/jurassic-world-alive/images/d/d1/Icon_Attack_Special_3.png/revision/latest/scale-to-width-down/60?cb=20180617152800	2x	1	0	Reduce target's damage 50% for 1 turn
+`;
+
+// replace non-numerics in numeric columns
+XXXXX = XXXXX.replace(/Varies/gm, "1");
+
+// extract all stats to JSON object string
+XXXXX= XXXXX.replace(
+	/(.*?)\t(.*?)\t(.*?)\t(.*?)\t(.*?)x?\t(.*?)\t(.*?)\t(.*?)\n/gm,
+	'{ "order": "$1", "name": "$3",\t\t\t\t\t\t\t"img": "$4",\t"damage": $5,\t"cooldown": $6,\t"delay": $7,\t"effect": "$8" },\n'
+);
+
+// wrap in square brackets
+XXXXX = `[${XXXXX}]`;
+
+// remove ending comma
+XXXXX = XXXXX.replace(
+	/,(\n+\]$)/gm,
+	'$1'
+);
+
+// parse into JSON object
+XXXXX = JSON.parse(XXXXX);
+
+// order the data so we can retrieve the abilities in order
+XXXXX = _.sortBy(XXXXX, [
+	function(o) { return o.order.replace(/-\d{1,3}/, ''); },
+	function(o) { return parseInt(o.order.replace(/\d{10}-/, '')); },
+]);
+
+// console.table(XXXXX);
+
+// merge all records by ability name
+XXXXX = _.reduce(XXXXX, function(result, value, key) {
+	var ability = _.find(result, { name: value.name });
+	if (!ability)
+		result.push(ability = { name: value.name, img: value.img, damage: value.damage, cooldown: value.cooldown, delay: value.delay, effects: [] });
+
+	// if (value.damage)
+	// 	ability.damage = ability.damage || value.damage;
+
+	// if (value.cooldown)
+	// 	ability.cooldown = ability.cooldown || value.cooldown;
+
+	// if (value.delay)
+	// 	ability.delay = ability.delay || value.delay;
+
+	if (!_.isEmpty(value.effect))
+		(ability.effects = (ability.effects || [])).push(value.effect);
+
+	return result;
+}, []);
+
+
+
 // https://metahub.info/jurassic-world-alive/550/jwa-recipes-for-all-hybrids-what-dna-do-you-need/
 var Fusions = `
 `;

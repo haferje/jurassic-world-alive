@@ -51,8 +51,8 @@
 					<th data-sortable-type="numeric">Health</th>
 					<th data-sortable-type="numeric">Damage</th>
 					<th data-sortable-type="numeric">Speed</th>
-					<th data-sortable-type="numeric">Armor</th>
-					<th data-sortable-type="numeric">Critical</th>
+					<th data-sortable-type="numeric">Armor %</th>
+					<th data-sortable-type="numeric">Critical %</th>
 					<th data-sortable="false">Abilities</th>
 					<th data-sortable="false">Passive</th>
 				</tr>
@@ -106,14 +106,13 @@
 					.map(own => {
 						var stats		= _.find(Dinos, { name: own.name });
 						var abilities	= _.find(Abilities, { name: own.name });
-						var image		= _.find(Images, { name: own.name });
 
 						var levelStats = {
 							levelHealth: Math.ceil(stats.health / Math.pow(1.05, 26 - own.level)),
 							levelDamage: Math.ceil(stats.damage / Math.pow(1.05, 26 - own.level)),
 						};
 
-						return _.extend(own, stats, abilities, image, levelStats);
+						return _.extend(own, stats, abilities, levelStats);
 					})
 					.each((dino, idx) => {
 						// var stringSort = `${~~dino.team}-${~~(dino.level>0)}-${dino.level}-${dino.name}`;
@@ -125,7 +124,7 @@
 									${idx+1}
 								</td>
 								<td class="image" data-value="${teamSort}">
-									<img src="${dino.img}" height="50" />
+									<img src="${dino.image}" height="50" />
 								</td>
 								<td class="${dino.team && "team"}">
 									${dino.name}
@@ -170,6 +169,12 @@
 
 // _.findIndex(x, null/undefined) gives first index
 // `${_.map()}` includes separating commas -- ${["<div>asdf</div>","<div>asdf</div>","<div>asdf</div>"]} -- because it does a toString() on the array
+
+// https://metahub.info/jwa-dinodex/
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Creatures
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Abilities
+
+// http://jurassic-world-alive.wikia.com/wiki/List_of_Status_Effects
 
 			});
 		</script>

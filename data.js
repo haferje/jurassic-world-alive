@@ -1,4 +1,88 @@
 
+var Collection = [
+	{ name: "Allosaurus", 				level: 7,	team: false },
+	{ name: "Amargasaurus", 			level: 9,	team: true },
+	{ name: "Ankylocodon",		 		level: 9,	team: false },
+	{ name: "Ankylosaurus Gen 2", 		level: 6,	team: false },
+	{ name: "Apatosaurus", 				level: 5,	team: false },
+	{ name: "Baryonyx", 				level: 11,	team: false },
+	{ name: "Carnotaurus",				level: 6,	team: false },
+	{ name: "Charlie",					level: 7,	team: false },
+	{ name: "Deinocheirus",				level: 4,	team: false },
+	{ name: "Delta",					level: 6,	team: false },
+	{ name: "Dilophosaurus Gen 2", 		level: 5,	team: false },
+	{ name: "Dimetrodon",		 		level: 6,	team: false },
+	{ name: "Dimetrodon Gen 2", 		level: 7,	team: false },
+	{ name: "Dimorphodon", 				level: 1,	team: false },
+	{ name: "Diplocaulus",		 		level: 5,	team: false },
+	{ name: "Diplocaulus Gen 2", 		level: 8,	team: false },
+	{ name: "Dracorex",					level: 6,	team: false },
+	{ name: "Dracorex Gen 2",			level: 7,	team: false },
+	{ name: "Edmontosaurus", 			level: 8,	team: true },
+	{ name: "Einiosaurus", 				level: 5,	team: false },
+	{ name: "Euoplocephalus", 			level: 5,	team: true },
+	{ name: "Gallimimus", 				level: 2,	team: false },
+	{ name: "Giraffatitan",				level: 6,	team: false },
+	{ name: "Gorgosaurus", 				level: 6,	team: false },
+	{ name: "Hatzegopteryx",			level: 7,	team: false },
+	{ name: "Iguanodon", 				level: 5,	team: false },
+	{ name: "Irritator Gen 2", 			level: 5,	team: false },
+	{ name: "Kaprosuchus", 				level: 8,	team: false },
+	{ name: "Koolasuchus", 				level: 11,	team: false },
+	{ name: "Koolasuchus Gen 2", 		level: 8,	team: false },
+	{ name: "Lythronax", 				level: 9,	team: true },
+	{ name: "Majungasaurus", 			level: 7,	team: false },
+	{ name: "Megalosaurus", 			level: 8,	team: false },
+	{ name: "Miragaia", 				level: 1,	team: false },
+	{ name: "Monolophosaurus Gen 2", 	level: 6,	team: false },
+	{ name: "Nodosaurus", 				level: 9,	team: false },
+	{ name: "Nundasuchus", 				level: 2,	team: false },
+	{ name: "Ophiacodon", 				level: 6,	team: true },
+	{ name: "Ornithomimus",				level: 6,	team: false },
+	{ name: "Parasaurolophus", 			level: 7,	team: false },
+	{ name: "Postosuchus", 				level: 6,	team: false },
+	{ name: "Proceratosaurus", 			level: 7,	team: false },
+	{ name: "Purussaurus Gen 2",		level: 8,	team: true },
+	{ name: "Sarcosuchus",		 		level: 4,	team: false },
+	{ name: "Secodontosaurus",			level: 11,	team: false },
+	{ name: "Sinoceratops",				level: 12,	team: false },
+	{ name: "Spinosaurus", 				level: 7,	team: false },
+	{ name: "Stegosaurus", 				level: 8,	team: true },
+	{ name: "Suchomimus", 				level: 5,	team: false },
+	{ name: "Suchotator", 				level: 6,	team: false },
+	{ name: "Tanycolagreus", 			level: 5,	team: false },
+	{ name: "Tarbosaurus", 				level: 5,	team: false },
+	{ name: "Tenontosaurus",			level: 6,	team: false },
+	{ name: "Triceratops", 				level: 7,	team: true },
+	{ name: "Triceratops Gen 2", 		level: 4,	team: false },
+	{ name: "Tuojiangosaurus", 			level: 8,	team: false },
+	{ name: "Tupandactylus", 			level: 8,	team: false },
+	{ name: "Tyrannosaurus Rex", 		level: 11,	team: false },
+	{ name: "Tyrannosaurus Rex Gen 2", 	level: 8,	team: false },
+	{ name: "Utahraptor", 				level: 8,	team: false },
+	{ name: "Velociraptor", 			level: 8,	team: false },
+	{ name: "Wuerhosaurus", 			level: 8,	team: false },
+];
+
+
+
+// A Tank:					Triceratops, Einosaurus, Euoplocephalus etc (Good at taking damage and Stun)
+// Anti Tank:				Gorgosaurus, Dimetrodon, Tanycolagreus etc (Anything that bites away at armor)
+// Glass Cannon:			Velociraptor, Suchomimus, Nundasuchas etc (A lot of damage and fast, but very little HP)
+// Lucky/Annoying:			Parasaurolophus, Edmontosaurus, Koolasuchus etc (Relying on stun% chances and being fast)
+// Speed Controllers:		Stegosaurus, Apatosaurus etc (Have moves that can slow down enemies, good for Lucky dinos and Glass Canon)
+// General all Rounders:	Deinocheirus, Purrusaurus etc (Just good all round to have, can’t go wrong with having them)
+
+// dodge
+// evasive Strike
+// Nullifying Strike
+// Impact
+// crits
+
+// Don’t miss the special event incubators
+
+
+
 // Quick-Use Abilities
 // These moves are usable every turn with no cooldown times or delayed usage. Usually, they are lesser moves and rely entirely on the creature's damage stat.
 // Charged-Use Abilities
@@ -729,79 +813,3 @@ Abilities = _.reduce(Abilities, function(result, value, key) {
 // https://metahub.info/jurassic-world-alive/550/jwa-recipes-for-all-hybrids-what-dna-do-you-need/
 var Fusions = `
 `;
-
-
-
-var Collection = [
-	{ name: "Allosaurus", 				level: 5,	team: false },
-	{ name: "Amargasaurus", 			level: 7,	team: true },
-	{ name: "Ankylocodon", 				level: 0,	team: false },
-	{ name: "Ankylosaurus", 			level: 0,	team: false },
-	{ name: "Ankylosaurus Gen 2", 		level: 5,	team: false },
-	{ name: "Apatosaurus", 				level: 0,	team: false },
-	{ name: "Deinocheirus",				level: 3,	team: false },
-	{ name: "Dilophosaurus", 			level: 0,	team: false },
-	{ name: "Dilophosaurus Gen 2", 		level: 2,	team: false },
-	{ name: "Dimetrodon", 				level: 0,	team: false },
-	{ name: "Dimetrodon Gen 2", 		level: 5,	team: false },
-	{ name: "Diplocaulus",		 		level: 4,	team: false },
-	{ name: "Diplocaulus Gen 2", 		level: 7,	team: false },
-	{ name: "Dracorex Gen 2",			level: 4,	team: false },
-	{ name: "Edmontosaurus", 			level: 7,	team: true },
-	{ name: "Einiasuchus", 				level: 0,	team: false },
-	{ name: "Einiosaurus", 				level: 1,	team: false },
-	{ name: "Euoplocephalus", 			level: 4,	team: true },
-	{ name: "Gorgosaurus", 				level: 0,	team: false },
-	{ name: "Hatzegopteryx",			level: 6,	team: false },
-	{ name: "Iguanodon", 				level: 5,	team: false },
-	{ name: "Kaprosuchus", 				level: 7,	team: false },
-	{ name: "Kentrosaurus", 			level: 0,	team: false },
-	{ name: "Koolasuchus Gen 2", 		level: 8,	team: false },
-	{ name: "Lythronax", 				level: 7,	team: true },
-	{ name: "Majungasaurus", 			level: 2,	team: false },
-	{ name: "Megalosaurus", 			level: 7,	team: false },
-	{ name: "Monolophosaurus Gen 2", 	level: 5,	team: false },
-	{ name: "Nodosaurus", 				level: 6,	team: false },
-	{ name: "Nundasuchus", 				level: 1,	team: false },
-	{ name: "Ophiacodon", 				level: 5,	team: true },
-	{ name: "Parasaurolophus", 			level: 6,	team: false },
-	{ name: "Postosuchus", 				level: 6,	team: false },
-	{ name: "Proceratosaurus", 			level: 7,	team: false },
-	{ name: "Purussaurus Gen 2",		level: 7,	team: true },
-	{ name: "Pyroraptor", 				level: 0,	team: false },
-	{ name: "Rajasaurus", 				level: 0,	team: false },
-	{ name: "Sarcosuchus",		 		level: 2,	team: false },
-	{ name: "Sinoceratops", 			level: 0,	team: false },
-	{ name: "Spinosaurus", 				level: 6,	team: false },
-	{ name: "Stegosaurus", 				level: 8,	team: true },
-	{ name: "Suchomimus", 				level: 4,	team: false },
-	{ name: "Tanycolagreus", 			level: 0,	team: false },
-	{ name: "Tarbosaurus", 				level: 2,	team: false },
-	{ name: "Tenontosaurus", 			level: 0,	team: false },
-	{ name: "Triceratops", 				level: 6,	team: true },
-	{ name: "Triceratops Gen 2", 		level: 4,	team: false },
-	{ name: "Tuojiangosaurus", 			level: 7,	team: false },
-	{ name: "Tupandactylus", 			level: 6,	team: false },
-	{ name: "Tyrannosaurus Rex", 		level: 0,	team: false },
-	{ name: "Tyrannosaurus Rex Gen 2", 	level: 0,	team: false },
-	{ name: "Utahraptor", 				level: 7,	team: false },
-	{ name: "Velociraptor", 			level: 4,	team: false },
-	{ name: "Wuerhosaurus", 			level: 8,	team: false },
-];
-
-
-
-// A Tank:					Triceratops, Einosaurus, Euoplocephalus etc (Good at taking damage and Stun)
-// Anti Tank:				Gorgosaurus, Dimetrodon, Tanycolagreus etc (Anything that bites away at armor)
-// Glass Cannon:			Velociraptor, Suchomimus, Nundasuchas etc (A lot of damage and fast, but very little HP)
-// Lucky/Annoying:			Parasaurolophus, Edmontosaurus, Koolasuchus etc (Relying on stun% chances and being fast)
-// Speed Controllers:		Stegosaurus, Apatosaurus etc (Have moves that can slow down enemies, good for Lucky dinos and Glass Canon)
-// General all Rounders:	Deinocheirus, Purrusaurus etc (Just good all round to have, can’t go wrong with having them)
-
-// dodge
-// evasive Strike
-// Nullifying Strike
-// Impact
-// crits
-
-// Don’t miss the special event incubators

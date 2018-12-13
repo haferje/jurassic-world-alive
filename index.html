@@ -35,6 +35,7 @@
 			}
 		</style>
 
+		https://metahub.info/jwa-dinodex/<br/>
 		Rarity: unique > legendary > epic > rare > common<br/>
 		Tier: apex > alpha > survivor > specialist > hatchling > carcass<br/>
 		Stats: Strength > Armored, Armored > Speed, Speed > Strength<br/>
@@ -48,11 +49,11 @@
 					<th data-sortable-type="numeric">Level</th>
 					<th data-sortable-type="alpha">Rarity</th>
 					<th data-sortable-type="alpha">Tier</th>
-					<th data-sortable-type="numeric">Health</th>
-					<th data-sortable-type="numeric">Damage</th>
-					<th data-sortable-type="numeric">Speed</th>
-					<th data-sortable-type="numeric">Armor %</th>
-					<th data-sortable-type="numeric">Critical %</th>
+					<th data-sortable-type="numeric"><div id="health-range"></div>Lvl<br/>Health</th>
+					<th data-sortable-type="numeric"><div id="damage-range"></div>Lvl<br/>Damage</th>
+					<th data-sortable-type="numeric"><div id="speed-range"></div><div>&nbsp;</div>Speed</th>
+					<th data-sortable-type="numeric">%<br/>Armor</th>
+					<th data-sortable-type="numeric">%<br/>Critical</th>
 					<th data-sortable="false">Abilities</th>
 					<th data-sortable="false">Passive</th>
 				</tr>
@@ -88,6 +89,7 @@
 				checkbox to show all/collection
 				fusions
 				header row for min/max values
+				should sort by: on team, in collection, *rarity*, level, name
 			 */
 
 			var $table = null;
@@ -99,7 +101,7 @@
 				// sort by: on team, in collection, level, name
 				sorter = (dino) => [~~!dino.team, ~~!(dino.level > 0), 99-dino.level, dino.name];
 
-				_(Collection)
+				Collection = _(Collection)
 					.filter(own => own.level > 0)
 					// .orderBy(dino => sorter(dino), ['desc', 'desc', 'desc', 'asc'])
 					.orderBy(sorter)
@@ -114,6 +116,14 @@
 
 						return _.extend(own, stats, abilities, levelStats);
 					})
+					.value();
+
+				$("#health-range").html(`${_.maxBy(Collection, 'levelHealth').levelHealth}-${_.minBy(Collection, 'levelHealth').levelHealth}`);
+				$("#damage-range").html(`${_.maxBy(Collection, 'levelDamage').levelDamage}-${_.minBy(Collection, 'levelDamage').levelDamage}`);
+				$("#speed-range").html(`${_.maxBy(Collection, 'speed').speed}-${_.minBy(Collection, 'speed').speed}`);
+
+
+				_(Collection)
 					.each((dino, idx) => {
 						// var stringSort = `${~~dino.team}-${~~(dino.level>0)}-${dino.level}-${dino.name}`;
 						var teamSort = sorter(dino).join('');

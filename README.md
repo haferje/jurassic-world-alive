@@ -4,7 +4,7 @@
 
 #### About
 
-This is a utility that helps me track my collection of dinosaurs in the mobile game Jurassic World ALive.
+This is a utility that helps me track my collection of dinosaurs in the mobile game Jurassic World Alive.
 
 #### Setup
 
